@@ -1,12 +1,15 @@
 package ar.edu.unq.po2.tpfinal;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Ubicacion {
 	protected double latitud;
 	protected double longitud;
 	protected ICalculadorDistancia calculadoraDistancia;
 	
 	
-	/*
+	/**
 	 * @author Leonardo Criado
 	 * 
 	 * Esta clase se encarga de gestionar las ubicacions a partir de una longitud y una latitud en double.
@@ -45,10 +48,21 @@ public class Ubicacion {
 	}
 
 	public double distanciaEnKm(Ubicacion ubicacion1) {
+		/**
+		 * Indica la distancia en kilometros entre esta ubiciacion y @param ubicacion1
+		 *
+		 */
 		return calculadoraDistancia.distanciaEnKm(	this.getLongitud(), 
 													this.getLatitud(), 
 													ubicacion1.getLongitud(), 
 													ubicacion1.getLatitud());
+	}
+
+	public List<Ubicacion> ubicacionesAMenosDe(double distancia, List<Ubicacion> ubicaciones) {
+		return ubicaciones		
+				.stream()								//Filtrando ubicaciones menores a distancia
+				.filter(ubi -> this.distanciaEnKm(ubi) < distancia)
+				.collect(Collectors.toList());
 	}
 	
 	
