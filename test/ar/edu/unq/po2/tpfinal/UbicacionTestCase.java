@@ -23,7 +23,26 @@ class UbicacionTestCase {
 
 	@Test
 	void testDistanciaMismoPunto() {
-		assertEquals(0d,ubicacion1.distancia(ubicacion1));
+		// excersice
+		double resultado = ubicacion1.distanciaEnKm(ubicacion1);
+		
+		//Verify
+		assertEquals(0d,resultado);
+	}
+	
+	@Test
+	void testDistanciaOtroPunto() {
+		// Setup
+		when(ubicacion2.getLatitud()).thenReturn(35d);
+		when(ubicacion2.getLongitud()).thenReturn(45d);
+		
+		// excersice
+		double resultado = ubicacion1.distanciaEnKm(ubicacion2);
+		
+		//Verify
+		assertEquals(608.29d,resultado, 0.1d);
+		verify(ubicacion2, times(1)).getLatitud();
+		verify(ubicacion2, times(1)).getLongitud();
 	}
 
 }
