@@ -59,9 +59,12 @@ public class Ubicacion {
 	}
 
 	public List<Ubicacion> ubicacionesAMenosDe(double distancia, List<Ubicacion> ubicaciones) {
+		/**
+		 * Retorna una sublista de @param ubicaciones con las ubicaciones a menos de @param distancia en km
+		 */
 		return ubicaciones		
-				.stream()								//Filtrando ubicaciones menores a distancia
-				.filter(ubi -> this.distanciaEnKm(ubi) < distancia)
+				.stream()								
+				.filter(ubi -> this.distanciaEnKm(ubi) < distancia) //Filtrando ubicaciones menores a distancia
 				.collect(Collectors.toList());
 	}
 	

@@ -82,5 +82,26 @@ class UbicacionTestCase {
 		verify(ubicacion4, times(1)).getLatitud();
 		verify(ubicacion4, times(1)).getLongitud();
 	}
+	
+	@Test
+	void testUbicacionesAMenosDeNinguna() {
+		// Setup
+		when(ubicacion4.getLatitud()).thenReturn(5d);
+		when(ubicacion4.getLongitud()).thenReturn(65d);
+		
+		List<Ubicacion> ubicaciones = new ArrayList<Ubicacion>();
+		Collections.addAll(ubicaciones, 
+							ubicacion4, 
+							ubicacion4,
+							ubicacion4);
+		
+		// excersice
+		List<Ubicacion> resultado = ubicacion1.ubicacionesAMenosDe(1500d,ubicaciones);
+		
+		//Verify
+		assertEquals(true,resultado.isEmpty());
+		verify(ubicacion4, times(3)).getLatitud();
+		verify(ubicacion4, times(3)).getLongitud();
+	}
 
 }
