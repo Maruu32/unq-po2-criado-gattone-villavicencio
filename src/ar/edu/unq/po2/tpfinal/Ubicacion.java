@@ -23,9 +23,6 @@ public class Ubicacion implements IUbicacion{
 		this.setCalculadoraDistancia(new DistanciaHaversine());
 	}
 	
-	protected ICalculadorDistancia getCalculadoraDistancia() {
-		return calculadoraDistancia;
-	}
 
 	protected void setCalculadoraDistancia(ICalculadorDistancia calculadoraDistancia) {
 		this.calculadoraDistancia = calculadoraDistancia;
