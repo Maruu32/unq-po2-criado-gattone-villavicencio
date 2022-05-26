@@ -3,7 +3,7 @@ package ar.edu.unq.po2.tpfinal;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Ubicacion {
+public class Ubicacion implements IUbicacion{
 	protected double latitud;
 	protected double longitud;
 	protected ICalculadorDistancia calculadoraDistancia;
@@ -65,6 +65,18 @@ public class Ubicacion {
 		return ubicaciones		
 				.stream()								
 				.filter(ubi -> this.distanciaEnKm(ubi) < distancia) //Filtrando ubicaciones menores a distancia
+				.collect(Collectors.toList());
+	}
+
+	
+	public List<Muestra> muestasAMenosDe(double distancia, Muestra muestra1, List<Muestra> muestras) {
+		/**
+		 * Retorna una sublista de @param muestras con las muestras a menos de @param distancia en de @param muestra1
+		 */
+		Ubicacion ubicacionMuestra =  muestra1.getUbicacion();
+		return muestras
+				.stream()
+				.filter(muestra -> ubicacionMuestra.distanciaEnKm(muestra.getUbicacion()) < distancia) //Filtrando muestras con ubicación menor a distancia
 				.collect(Collectors.toList());
 	}
 	
