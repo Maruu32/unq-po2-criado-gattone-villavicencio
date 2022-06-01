@@ -30,7 +30,8 @@ class ZonaDeCoberturaTestCase {
 	void setUp() throws Exception {
 		
 		ubicacion1 = mock(Ubicacion.class);
-		zonaDeCobertura = new zonaDeCobertura("Quilmes", ubicacion1, 10d, app);
+		app = mock(AplicacionWeb.class);
+		zonaDeCobertura = new ZonaDeCobertura("Quilmes", ubicacion1, 10d, app);
 		ubicacion2 = mock(Ubicacion.class);
 		ubicacion3 = mock(Ubicacion.class);
 		ubicacion4 = mock(Ubicacion.class);
@@ -38,20 +39,16 @@ class ZonaDeCoberturaTestCase {
 		muestra2 = mock(Muestra.class);
 		muestra3 = mock(Muestra.class);
 		muestra4 = mock(Muestra.class);
-		app = mock(AplicacionWeb.class);
+		
 	}
 
 	@Test
 	void testMuestasDentroDeZona() {
 		// Setup
-		when(ubicacion1.getLatitud()).thenReturn(35d);
-		when(ubicacion1.getLongitud()).thenReturn(45d);
-		when(ubicacion2.getLatitud()).thenReturn(35d);
-		when(ubicacion2.getLongitud()).thenReturn(46d);
-		when(ubicacion3.getLatitud()).thenReturn(35.1d);
-		when(ubicacion3.getLongitud()).thenReturn(45d);
-		when(ubicacion4.getLatitud()).thenReturn(5d);
-		when(ubicacion4.getLongitud()).thenReturn(65d);
+		when(ubicacion1.distanciaEnKm(ubicacion1)).thenReturn(0d);
+		when(ubicacion1.distanciaEnKm(ubicacion2)).thenReturn(10d);
+		when(ubicacion1.distanciaEnKm(ubicacion3)).thenReturn(50d);
+		when(ubicacion1.distanciaEnKm(ubicacion4)).thenReturn(5555d);
 		when(muestra1.getUbicacion()).thenReturn(ubicacion1);
 		when(muestra2.getUbicacion()).thenReturn(ubicacion2);
 		when(muestra3.getUbicacion()).thenReturn(ubicacion3);
@@ -69,20 +66,18 @@ class ZonaDeCoberturaTestCase {
 		List<Muestra> resultado = zonaDeCobertura.muestrasDentroDeZona();
 		
 		//Verify
+		assertEquals(2,resultado.size());
 		assertEquals(muestra1,resultado.get(0));
-		assertEquals(muestra3,resultado.get(1));
-		verify(ubicacion1, times(2)).getLatitud();
-		verify(ubicacion1, times(2)).getLongitud();
-		verify(ubicacion2, times(1)).getLatitud();
-		verify(ubicacion2, times(1)).getLongitud();
-		verify(ubicacion3, times(1)).getLatitud();
-		verify(ubicacion3, times(1)).getLongitud();
-		verify(ubicacion4, times(1)).getLatitud();
-		verify(ubicacion4, times(1)).getLongitud();
+		assertEquals(muestra2,resultado.get(1));
+		verify(ubicacion1, times(1)).distanciaEnKm(ubicacion1);
+		verify(ubicacion1, times(1)).distanciaEnKm(ubicacion2);
+		verify(ubicacion1, times(1)).distanciaEnKm(ubicacion3);
+		verify(ubicacion1, times(1)).distanciaEnKm(ubicacion4);
 		verify(muestra1, times(1)).getUbicacion();
 		verify(muestra2, times(1)).getUbicacion();
 		verify(muestra3, times(1)).getUbicacion();
 		verify(muestra4, times(1)).getUbicacion();
+		verify(app, times(1)).getMuestras();
 	}
 
 }
