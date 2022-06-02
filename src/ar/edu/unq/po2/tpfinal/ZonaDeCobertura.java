@@ -50,7 +50,7 @@ public class ZonaDeCobertura {
 		List<Muestra> muestras = appWeb.getMuestras(); // Tomo todas las muestras registradas
 		return muestras
 				.stream()
-				.filter(muestra -> this.getEpicentro().distanciaEnKm(muestra.getUbicacion()) <= this.getRadio())
+				.filter(muestra -> this.distanciaEnKmAEpicentro(muestra.getUbicacion()) <= this.getRadio())
 				//Me quedo con las que tienen una distancia al epicentro menor o igual al radio de la zona
 				.collect(Collectors.toList());
 	}
@@ -65,10 +65,15 @@ public class ZonaDeCobertura {
 												.collect(Collectors.toList());
 		return zonas
 				.stream()
-				.filter(zona -> this.getEpicentro().distanciaEnKm(zona.getEpicentro()) 	// La distancia entre los epicentros
+				.filter(zona -> this.distanciaEnKmAEpicentro(zona.getEpicentro()) 	// La distancia entre los epicentros
 						< 																// tiene que ser menor	
-						(this.radio + zona.getRadio()))										// a la suma de los radios de esta zona y la que se está evaluando
+						(this.radio + zona.getRadio()))									// a la suma de los radios de esta zona y la que se está evaluando
 				.collect(Collectors.toList());
+	}
+	
+	private double distanciaEnKmAEpicentro(Ubicacion ubicacion) {
+		Ubicacion epicentro = this.getEpicentro();
+		return epicentro.distanciaEnKm(ubicacion);
 	}
 
 }
