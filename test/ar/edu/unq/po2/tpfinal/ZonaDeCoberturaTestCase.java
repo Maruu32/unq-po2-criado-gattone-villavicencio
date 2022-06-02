@@ -16,6 +16,9 @@ import org.junit.jupiter.api.Test;
 class ZonaDeCoberturaTestCase {
 	
 	ZonaDeCobertura zonaDeCobertura; //SUT
+	ZonaDeCobertura zonaDeCobertura2; //DOC
+	ZonaDeCobertura zonaDeCobertura3; //DOC
+	ZonaDeCobertura zonaDeCobertura4; //DOC
 	Ubicacion ubicacion1; 	//DOC
 	Ubicacion ubicacion2; 	//DOC
 	Ubicacion ubicacion3; 	//DOC
@@ -39,6 +42,9 @@ class ZonaDeCoberturaTestCase {
 		muestra2 = mock(Muestra.class);
 		muestra3 = mock(Muestra.class);
 		muestra4 = mock(Muestra.class);
+		zonaDeCobertura2 = mock(ZonaDeCobertura.class);
+		zonaDeCobertura3 = mock(ZonaDeCobertura.class);
+		zonaDeCobertura4 = mock(ZonaDeCobertura.class);
 		
 	}
 
@@ -78,6 +84,46 @@ class ZonaDeCoberturaTestCase {
 		verify(muestra3, times(1)).getUbicacion();
 		verify(muestra4, times(1)).getUbicacion();
 		verify(app, times(1)).getMuestras();
+	}
+	
+	@Test
+	void testZonasSolapadas() {
+		// Setup
+		when(ubicacion1.distanciaEnKm(ubicacion1)).thenReturn(0d);
+		when(ubicacion1.distanciaEnKm(ubicacion2)).thenReturn(15d);
+		when(ubicacion1.distanciaEnKm(ubicacion3)).thenReturn(10d);
+		when(ubicacion1.distanciaEnKm(ubicacion4)).thenReturn(5555d);
+		when(zonaDeCobertura2.getEpicentro()).thenReturn(ubicacion2);
+		when(zonaDeCobertura3.getEpicentro()).thenReturn(ubicacion3);
+		when(zonaDeCobertura4.getEpicentro()).thenReturn(ubicacion4);
+		when(zonaDeCobertura2.getRadio()).thenReturn(5d);
+		when(zonaDeCobertura3.getRadio()).thenReturn(10d);
+		when(zonaDeCobertura4.getRadio()).thenReturn(200d);
+		List<ZonaDeCobertura> zonas = new ArrayList<ZonaDeCobertura>();
+		Collections.addAll(zonas, 
+							zonaDeCobertura, 
+							zonaDeCobertura2, 
+							zonaDeCobertura3, 
+							zonaDeCobertura4
+							);
+		when(app.getZonasDeCobertura()).thenReturn(zonas);
+		
+		// excersice
+		List<ZonaDeCobertura> resultado = zonaDeCobertura.zonasSolapadas();
+		
+		//Verify
+		assertEquals(1,resultado.size());
+		assertEquals(zonaDeCobertura3,resultado.get(0));
+		verify(ubicacion1, times(1)).distanciaEnKm(ubicacion2);
+		verify(ubicacion1, times(1)).distanciaEnKm(ubicacion3);
+		verify(ubicacion1, times(1)).distanciaEnKm(ubicacion4);
+		verify(zonaDeCobertura2, times(1)).getEpicentro();
+		verify(zonaDeCobertura3, times(1)).getEpicentro();
+		verify(zonaDeCobertura4, times(1)).getEpicentro();
+		verify(zonaDeCobertura2, times(1)).getRadio();
+		verify(zonaDeCobertura3, times(1)).getRadio();
+		verify(zonaDeCobertura4, times(1)).getRadio();
+		verify(app, times(1)).getZonasDeCobertura();
 	}
 
 }

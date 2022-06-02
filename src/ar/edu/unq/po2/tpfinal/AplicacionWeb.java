@@ -9,4 +9,9 @@ public class AplicacionWeb {
 		return null;
 	}
 
+	public List<ZonaDeCobertura> getZonasDeCobertura() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
