@@ -20,11 +20,11 @@ public class ZonaDeCobertura {
 	 */
 	
 	private String nombreZona;
-	private Ubicacion epicentro;
+	private Ubicacion epicentro;  // usar interface?
 	private double radio;
-	private AplicacionWeb appWeb;  // usar interface?
+	private AplicacionWeb appWeb; // usar interface?
 
-	public ZonaDeCobertura(String string, Ubicacion ubicacion1, double d, AplicacionWeb app) {
+	public ZonaDeCobertura(String string, Ubicacion ubicacion1, double d, AplicacionWeb app) { //TODO: si app pasa a ser singleton se elimina del contructor
 		this.nombreZona = string;
 		this.epicentro = ubicacion1;
 		this.radio = d;
@@ -47,7 +47,7 @@ public class ZonaDeCobertura {
 		/**
 		 * Devuelve una lista de las muestrs que estan dentro de la zona de cobertura
 		 */
-		List<Muestra> muestras = appWeb.getMuestras(); // Tomo todas las muestras registradas
+		List<Muestra> muestras = appWeb.getMuestras(); 								// Tomo todas las muestras registradas
 		return muestras
 				.stream()
 				.filter(muestra -> this.distanciaEnKmAEpicentro(muestra.getUbicacion()) <= this.getRadio())
@@ -59,15 +59,15 @@ public class ZonaDeCobertura {
 		/**
 		 * Devuelve una lista de las zonas que se solapan
 		 */
-		List<ZonaDeCobertura> zonas = appWeb.getZonasDeCobertura() // Tomo todas las zonas exepto esta.
+		List<ZonaDeCobertura> zonas = appWeb.getZonasDeCobertura() 
 												.stream()
-												.filter(zona -> zona != this)
+												.filter(zona -> zona != this)		// Tomo todas las zonas exepto esta.
 												.collect(Collectors.toList());
 		return zonas
 				.stream()
 				.filter(zona -> this.distanciaEnKmAEpicentro(zona.getEpicentro()) 	// La distancia entre los epicentros
-						< 																// tiene que ser menor	
-						(this.radio + zona.getRadio()))									// a la suma de los radios de esta zona y la que se está evaluando
+						< 															// tiene que ser menor	
+						(this.radio + zona.getRadio()))								// a la suma de los radios de esta zona y la que se está evaluando
 				.collect(Collectors.toList());
 	}
 	
