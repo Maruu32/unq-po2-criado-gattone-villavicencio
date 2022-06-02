@@ -1,4 +1,4 @@
-package unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal;
 
 public class Usuario {
 	private String usuario;

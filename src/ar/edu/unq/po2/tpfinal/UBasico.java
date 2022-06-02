@@ -1,6 +1,6 @@
-package unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal;
 
-public class UExperto implements EstadoUsuario  {
+public class UBasico implements EstadoUsuario  {
 
 	@Override
 	public void opinar(Usuario usuario) {
