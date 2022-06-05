@@ -20,15 +20,35 @@ public class ZonaDeCobertura {
 	 */
 	
 	private String nombreZona;
-	private Ubicacion epicentro;  // usar interface?
+	private Ubicacion epicentro;  
 	private double radio;
-	private AplicacionWeb appWeb; // usar interface?
+	private AplicacionWeb appWeb; 
 
-	public ZonaDeCobertura(String string, Ubicacion ubicacion1, double d, AplicacionWeb app) { //TODO: si app pasa a ser singleton se elimina del contructor
-		this.nombreZona = string;
-		this.epicentro = ubicacion1;
-		this.radio = d;
-		this.appWeb = app;
+	protected void setNombreZona(String nombreZona) {
+		this.nombreZona = nombreZona;
+	}
+
+	protected void setEpicentro(Ubicacion epicentro) {
+		this.epicentro = epicentro;
+	}
+
+	protected void setRadio(double radio) {
+		this.radio = radio;
+	}
+
+	protected void setAppWeb(AplicacionWeb appWeb) {
+		this.appWeb = appWeb;
+	}
+
+	protected void setMuestras(List<Muestra> muestras) {
+		this.muestras = muestras;
+	}
+
+	public ZonaDeCobertura(String string, Ubicacion ubicacion1, double d, AplicacionWeb app) { 
+		this.setNombreZona(string);
+		this.setEpicentro(epicentro); 
+		this.setRadio(d);
+		this.setAppWeb(app);
 	}
 
 	protected String getNombreZona() {
@@ -45,7 +65,7 @@ public class ZonaDeCobertura {
 
 	public List<Muestra> muestrasDentroDeZona() {
 		/**
-		 * Devuelve una lista de las muestrs que estan dentro de la zona de cobertura
+		 * Devuelve una lista de las muestras que estan dentro de la zona de cobertura tomando como origen la lista de muestras
 		 */
 		List<Muestra> muestras = appWeb.getMuestras(); 								// Tomo todas las muestras registradas
 		return muestras
