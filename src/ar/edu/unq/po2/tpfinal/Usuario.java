@@ -11,15 +11,16 @@ public class Usuario {
 	public void opinar() {
 		estadoUsuario.opinar(this);
 	}
-	
-	public void enviarMuestra() {
-		estadoUsuario.enviarMuestra(this);
+
+	public void setEstadoUsuario(UExperto uExperto) {
+		// TODO Auto-generated method stub 
+		
 	}
 	
-	public void verificarMuestra() {
-		estadoUsuario.verificarMuestra(this);
-	}
+
 	
+
+
 	
 	
 
