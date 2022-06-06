@@ -41,7 +41,7 @@ public class ZonaDeCobertura {
 	}
 
 
-	public ZonaDeCobertura(String string, Ubicacion ubicacion1, double d, AplicacionWeb app) { 
+	public ZonaDeCobertura(String string, Ubicacion epicentro, double d, AplicacionWeb app) { 
 		this.setNombreZona(string);
 		this.setEpicentro(epicentro); 
 		this.setRadio(d);
