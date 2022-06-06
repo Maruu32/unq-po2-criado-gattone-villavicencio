@@ -40,9 +40,6 @@ public class ZonaDeCobertura {
 		this.appWeb = appWeb;
 	}
 
-	protected void setMuestras(List<Muestra> muestras) {
-		this.muestras = muestras;
-	}
 
 	public ZonaDeCobertura(String string, Ubicacion ubicacion1, double d, AplicacionWeb app) { 
 		this.setNombreZona(string);
