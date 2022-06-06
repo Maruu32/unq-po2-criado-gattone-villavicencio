@@ -67,13 +67,13 @@ public class ZonaDeCobertura {
 		List<Muestra> muestras = appWeb.getMuestras(); 								// Tomo todas las muestras registradas
 		return muestras
 				.stream()
-				.filter(muestra -> muestraDentroDeZona(muestra))
+				.filter(muestra -> muestraEstaDentroDeZona(muestra))
 				//Me quedo con las que tienen una distancia al epicentro menor o igual al radio de la zona
 				.collect(Collectors.toList());
 	}
 	
 	
-	public boolean muestraDentroDeZona(Muestra muestra) {
+	public boolean muestraEstaDentroDeZona(Muestra muestra) {
 		/**
 		 * Indica si una muestra está dentro de esta zona de cobertura
 		 */
@@ -97,6 +97,7 @@ public class ZonaDeCobertura {
 						(this.radio + zona.getRadio()))								// a la suma de los radios de esta zona y la que se está evaluando
 				.collect(Collectors.toList());
 	}
+	
 	
 	private double distanciaEnKmAEpicentro(Ubicacion ubicacion) {
 		Ubicacion epicentro = this.getEpicentro();
