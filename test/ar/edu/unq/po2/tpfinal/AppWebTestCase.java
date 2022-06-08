@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 class AppWebTestCase {
 	
-	AppWeb app;					//SUT
+	AplicacionWeb app;			//SUT
 	Muestra muestra1; 			//DOC
 	Persona persona1; 			//DOC
 	ZonaDeCobertura zona1; 		//DOC
@@ -27,7 +27,7 @@ class AppWebTestCase {
 		zona2 = mock(ZonaDeCobertura.class);
 		zona3 = mock(ZonaDeCobertura.class);
 		organizacion1 = mock(Organizacion.class);
-		app = new AppWeb();
+		app = new AplicacionWeb();
 	}
 
 	@Test
