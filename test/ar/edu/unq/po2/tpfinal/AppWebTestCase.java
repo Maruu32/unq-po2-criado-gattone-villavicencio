@@ -2,6 +2,9 @@ package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,6 +15,8 @@ class AppWebTestCase {
 	Muestra muestra1; 			//DOC
 	Persona persona1; 			//DOC
 	ZonaDeCobertura zona1; 		//DOC
+	ZonaDeCobertura zona2; 		//DOC
+	ZonaDeCobertura zona3; 		//DOC
 	Organizacion organizacion1; //DOC
 
 	@BeforeEach
@@ -19,6 +24,8 @@ class AppWebTestCase {
 		muestra1 = mock(Muestra.class);
 		persona1 = mock(Persona.class);
 		zona1 = mock(ZonaDeCobertura.class);
+		zona2 = mock(ZonaDeCobertura.class);
+		zona3 = mock(ZonaDeCobertura.class);
 		organizacion1 = mock(Organizacion.class);
 		app = new AppWeb();
 	}
@@ -75,6 +82,34 @@ class AppWebTestCase {
 		assertEquals(1, app.getOrganizaciones().size());
 		
 	}
+	
+	@Test
+	void testAvisoNuevaMuestraZonas() {
+		//setup
+		when(zona1.muestraEstaDentroDeZona(muestra1)).thenReturn(true);
+		when(zona2.muestraEstaDentroDeZona(muestra1)).thenReturn(false);
+		when(zona3.muestraEstaDentroDeZona(muestra1)).thenReturn(true);
+		
+		// excersice		
+		app.addZonaDeCobertura(zona1);
+		app.addZonaDeCobertura(zona2);
+		app.addZonaDeCobertura(zona3);
+		app.addMuestra(muestra1);
+		
+		// verify
+		assertEquals(true, app.getMuestras().isEmpty());
+		assertEquals(true, app.getUsuarios().isEmpty());
+		assertEquals(3, app.getZonasDeCobertura().size());
+		assertEquals(1, app.getOrganizaciones().size());
+		verify(zona1, times(1)).muestraEstaDentroDeZona(muestra1);
+		verify(zona2, times(1)).muestraEstaDentroDeZona(muestra1);
+		verify(zona3, times(1)).muestraEstaDentroDeZona(muestra1);
+		verify(zona1, times(1)).avisarOrganizacionesNuevaMuestra(muestra1);
+		verify(zona3, times(1)).avisarOrganizacionesNuevaMuestra(muestra1);
+		
+	}
+	
+	
 	
 
 }
