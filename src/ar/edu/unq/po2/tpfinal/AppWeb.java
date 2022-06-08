@@ -57,11 +57,18 @@ public class AppWeb {
 	}
 	
 	public void addMuestra(Muestra muestra) {
+		/**
+		 * Agrega muestra y avisa a las zonas de cobertura
+		 */
 		this.getMuestras().add(muestra);
-		//this.avisoNuevaMuestraZonas(muestra);
+		this.avisoNuevaMuestraZonas(muestra);
 	}
 	
 
+	private void avisoNuevaMuestraZonas(Muestra muestra) {
+		this.getZonasDeCobertura().forEach(zona -> zona.avisarOrganizacionesNuevaMuestra(muestra));
+		
+	}
 	public void addUsuario(Persona persona) {
 		this.getUsuarios().add(persona);
 	}
