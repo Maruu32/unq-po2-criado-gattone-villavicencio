@@ -103,5 +103,12 @@ public class ZonaDeCobertura {
 		Ubicacion epicentro = this.getEpicentro();
 		return epicentro.distanciaEnKm(ubicacion);
 	}
+	
+	
+
+	public void avisarOrganizacionesNuevaMuestra(Muestra muestra1) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
