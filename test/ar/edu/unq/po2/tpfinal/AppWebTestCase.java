@@ -8,16 +8,18 @@ import org.junit.jupiter.api.Test;
 
 class AppWebTestCase {
 	
-	AppWeb app; //SUT
-	Muestra muestra1; //DOC
-	Persona persona1; //DOC
-	ZonaDeCobertura zona1; //DOC
+	AppWeb app;					//SUT
+	Muestra muestra1; 			//DOC
+	Persona persona1; 			//DOC
+	ZonaDeCobertura zona1; 		//DOC
+	Organizacion organizacion1; //DOC
 
 	@BeforeEach
 	void setUp() throws Exception {
 		muestra1 = mock(Muestra.class);
 		persona1 = mock(Persona.class);
 		zona1 = mock(ZonaDeCobertura.class);
+		organizacion1 = mock(Organizacion.class);
 		app = new AppWeb();
 	}
 
@@ -36,7 +38,7 @@ class AppWebTestCase {
 	
 	
 	@Test
-	void testAddPersona() {
+	void testAddUsuario() {
 		// excersice		
 		app.addUsuario(persona1);
 		
@@ -58,6 +60,19 @@ class AppWebTestCase {
 		assertEquals(true, app.getUsuarios().isEmpty());
 		assertEquals(1, app.getZonasDeCobertura().size());
 		assertEquals(true, app.getOrganizaciones().isEmpty());
+		
+	}
+	
+	@Test
+	void testAddOrganizacion() {
+		// excersice		
+		app.addOrganizacion(organizacion1);
+		
+		// verify
+		assertEquals(true, app.getMuestras().isEmpty());
+		assertEquals(true, app.getUsuarios().isEmpty());
+		assertEquals(true, app.getZonasDeCobertura().isEmpty());
+		assertEquals(1, app.getOrganizaciones().size());
 		
 	}
 	

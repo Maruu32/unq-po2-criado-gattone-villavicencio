@@ -67,6 +67,10 @@ public class AppWeb {
 	
 	public void addZonaDeCobertura(ZonaDeCobertura zona) {
 		this.getZonasDeCobertura().add(zona);
+	}
+	public void addOrganizacion(Organizacion organizacion1) {
+		this.getOrganizaciones().add(organizacion1);
+		
 	}	
 	
 	
