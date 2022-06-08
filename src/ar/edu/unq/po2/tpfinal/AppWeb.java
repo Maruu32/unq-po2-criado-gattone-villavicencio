@@ -53,9 +53,12 @@ public class AppWeb {
 		this.setMuestras(new ArrayList<Muestra>());
 		this.setOrganizaciones(new ArrayList<Organizacion>());
 		this.setUsuarios(new ArrayList<Persona>());
-		this.setOrganizaciones(new ArrayList<Organizacion>());
+		this.setZonasDeCobertura(new ArrayList<ZonaDeCobertura>());
 	}
 	
+	public void addMuestra(Muestra muestra) {
+		this.getMuestras().add(muestra);
+	}
 	
 	
 	

@@ -22,12 +22,13 @@ class AppWebTestCase {
 	@Test
 	void testAddMuestra() {
 		// excersice		
-		app.add(muestra1, persona1);
+		app.addMuestra(muestra1);
+		
 		// verify
-		assertEqual(1, app.getMuestras().size());
-		assertEqual(0, app.getUsuarios().size());
-		assertEqual(0, app.getZonasDeCobertura().size());
-		assertEqual(0, app.getOrganizaciones().size());
+		assertEquals(1, app.getMuestras().size());
+		assertEquals(true, app.getUsuarios().isEmpty());
+		assertEquals(true, app.getZonasDeCobertura().isEmpty());
+		assertEquals(true, app.getOrganizaciones().isEmpty());
 		
 	}
 
