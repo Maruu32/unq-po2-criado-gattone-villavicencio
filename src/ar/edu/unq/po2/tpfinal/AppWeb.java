@@ -61,6 +61,13 @@ public class AppWeb {
 	}
 	
 
+	public void addUsuario(Persona persona) {
+		this.getUsuarios().add(persona);
+	}
+	
+	public void addZonaDeCobertura(ZonaDeCobertura zona) {
+		this.getZonasDeCobertura().add(zona);
+	}	
 	
 	
 
