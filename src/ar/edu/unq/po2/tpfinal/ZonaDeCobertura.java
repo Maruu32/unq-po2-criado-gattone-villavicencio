@@ -1,5 +1,6 @@
 package ar.edu.unq.po2.tpfinal;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,7 +24,7 @@ public class ZonaDeCobertura {
 	private Ubicacion epicentro;  
 	private double radio;
 	private AplicacionWeb appWeb; 
-	private List<Organizacion> Observers; 
+	private List<ObserverZona> Observers; 
 
 	protected void setNombreZona(String nombreZona) {
 		this.nombreZona = nombreZona;
@@ -40,6 +41,10 @@ public class ZonaDeCobertura {
 	protected void setAppWeb(AplicacionWeb appWeb) {
 		this.appWeb = appWeb;
 	}
+	
+	private void setObservers(ArrayList<ObserverZona> arrayList) {
+		this.Observers = arrayList;
+	}
 
 
 	public ZonaDeCobertura(String string, Ubicacion epicentro, double d, AplicacionWeb app) { 
@@ -47,7 +52,10 @@ public class ZonaDeCobertura {
 		this.setEpicentro(epicentro); 
 		this.setRadio(d);
 		this.setAppWeb(app);
+		this.setObservers(new ArrayList<ObserverZona>());
 	}
+
+
 
 	protected String getNombreZona() {
 		return nombreZona;
@@ -59,6 +67,10 @@ public class ZonaDeCobertura {
 
 	protected double getRadio() {
 		return radio;
+	}
+	
+	protected List<ObserverZona> getObservers() {
+		return Observers;
 	}
 
 	public List<Muestra> muestrasDentroDeZona() {
@@ -106,7 +118,16 @@ public class ZonaDeCobertura {
 	}
 
 	public void notificar(Muestra muestra, String string) {
-		// TODO Auto-generated method stub
+		/**
+		 * Notifica a los observers si la muestra está dentro de la zona de cobertura
+		 */
+		if (this.muestraEstaDentroDeZona(muestra)) 
+			this.getObservers().forEach(observer -> observer.update(this, muestra, string));
+	}
+
+	public void addObserver(ObserverZona orga1) {
+		this.getObservers().add(orga1);
+		
 	}
 	
 	

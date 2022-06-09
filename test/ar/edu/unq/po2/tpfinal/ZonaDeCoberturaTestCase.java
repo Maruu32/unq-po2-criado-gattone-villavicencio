@@ -48,9 +48,9 @@ class ZonaDeCoberturaTestCase {
 		zonaDeCobertura2 = mock(ZonaDeCobertura.class);
 		zonaDeCobertura3 = mock(ZonaDeCobertura.class);
 		zonaDeCobertura4 = mock(ZonaDeCobertura.class);
-		orga1 = mock(Organizacion.class);
-		orga2 = mock(Organizacion.class);
-		orga3 = mock(Organizacion.class);
+		orga1 = mock(ObserverZona.class);
+		orga2 = mock(ObserverZona.class);
+		orga3 = mock(ObserverZona.class);
 		
 	}
 

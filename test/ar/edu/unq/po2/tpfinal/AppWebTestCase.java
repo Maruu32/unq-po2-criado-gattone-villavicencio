@@ -97,13 +97,7 @@ class AppWebTestCase {
 		app.addMuestra(muestra1);
 		
 		// verify
-		assertEquals(1, app.getMuestras().size());
-		assertEquals(true, app.getUsuarios().isEmpty());
-		assertEquals(3, app.getZonasDeCobertura().size());
-		assertEquals(true, app.getOrganizaciones().isEmpty());
-		verify(zona1, times(1)).muestraEstaDentroDeZona(muestra1);
-		verify(zona2, times(1)).muestraEstaDentroDeZona(muestra1);
-		verify(zona3, times(1)).muestraEstaDentroDeZona(muestra1);
+		verify(zona1, times(1)).notificar(muestra1, "Nueva muestra");
 		verify(zona2, times(1)).notificar(muestra1, "Nueva muestra");
 		verify(zona3, times(1)).notificar(muestra1,"Nueva muestra");
 		
