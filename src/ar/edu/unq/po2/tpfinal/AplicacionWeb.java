@@ -10,7 +10,7 @@ public class AplicacionWeb {
 	List<Persona> usuarios;
 	
 	/**
-	 * @author LeO
+	 * @author Leonardo Criado
 	 * 
 	 * La responsabilidad de esta clase es ser el main del programa y consolidar las clases que la componen
 	 *  
@@ -66,8 +66,10 @@ public class AplicacionWeb {
 	
 
 	private void avisoNuevaMuestraZonas(Muestra muestra) {
-		this.getZonasDeCobertura().forEach(zona -> zona.avisarOrganizacionesNuevaMuestra(muestra));
-		
+		this.getZonasDeCobertura()
+				.stream()
+				.filter(zona -> zona.muestraEstaDentroDeZona(muestra))
+				.forEach(zona -> zona.notificar(muestra, "Nueva muestra"));
 	}
 	
 	public void addUsuario(Persona persona) {
@@ -80,7 +82,6 @@ public class AplicacionWeb {
 	
 	public void addOrganizacion(Organizacion organizacion1) {
 		this.getOrganizaciones().add(organizacion1);
-		
 	}	
 	
 	

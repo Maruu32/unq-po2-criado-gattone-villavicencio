@@ -85,6 +85,10 @@ class AppWebTestCase {
 	
 	@Test
 	void testAvisoNuevaMuestraZonas() {
+		//setup
+		when(zona1.muestraEstaDentroDeZona(muestra1)).thenReturn(false);
+		when(zona2.muestraEstaDentroDeZona(muestra1)).thenReturn(true);
+		when(zona3.muestraEstaDentroDeZona(muestra1)).thenReturn(true);
 		
 		// excersice		
 		app.addZonaDeCobertura(zona1);
@@ -97,9 +101,11 @@ class AppWebTestCase {
 		assertEquals(true, app.getUsuarios().isEmpty());
 		assertEquals(3, app.getZonasDeCobertura().size());
 		assertEquals(true, app.getOrganizaciones().isEmpty());
-		verify(zona1, times(1)).avisarOrganizacionesNuevaMuestra(muestra1);
-		verify(zona2, times(1)).avisarOrganizacionesNuevaMuestra(muestra1);
-		verify(zona3, times(1)).avisarOrganizacionesNuevaMuestra(muestra1);
+		verify(zona1, times(1)).muestraEstaDentroDeZona(muestra1);
+		verify(zona2, times(1)).muestraEstaDentroDeZona(muestra1);
+		verify(zona3, times(1)).muestraEstaDentroDeZona(muestra1);
+		verify(zona2, times(1)).notificar(muestra1, "Nueva muestra");
+		verify(zona3, times(1)).notificar(muestra1,"Nueva muestra");
 		
 	}
 	

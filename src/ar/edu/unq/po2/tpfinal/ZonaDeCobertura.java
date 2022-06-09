@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class ZonaDeCobertura {
 	
 	/**
-	 * @author LeO
+	 * @author Lenardo Criado
 	 * 
 	 * @since 01/06/2022
 	 * 
@@ -23,6 +23,7 @@ public class ZonaDeCobertura {
 	private Ubicacion epicentro;  
 	private double radio;
 	private AplicacionWeb appWeb; 
+	private List<Organizacion> Observers; 
 
 	protected void setNombreZona(String nombreZona) {
 		this.nombreZona = nombreZona;
@@ -103,12 +104,14 @@ public class ZonaDeCobertura {
 		Ubicacion epicentro = this.getEpicentro();
 		return epicentro.distanciaEnKm(ubicacion);
 	}
+
+	public Object notificar(Muestra muestra, String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 
-	public void avisarOrganizacionesNuevaMuestra(Muestra muestra1) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }
