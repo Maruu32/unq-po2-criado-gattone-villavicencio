@@ -44,4 +44,5 @@ class OrganizacionTestCase {
 		verify(fe2, times(1)).nuevoEvento(orga1, zonaDeCobertura, muestra1);
 	}
 
+	
 }
