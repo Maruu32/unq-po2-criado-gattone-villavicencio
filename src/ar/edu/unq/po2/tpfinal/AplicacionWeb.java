@@ -69,6 +69,7 @@ public class AplicacionWeb {
 		this.getZonasDeCobertura().forEach(zona -> zona.avisarOrganizacionesNuevaMuestra(muestra));
 		
 	}
+	
 	public void addUsuario(Persona persona) {
 		this.getUsuarios().add(persona);
 	}
@@ -76,6 +77,7 @@ public class AplicacionWeb {
 	public void addZonaDeCobertura(ZonaDeCobertura zona) {
 		this.getZonasDeCobertura().add(zona);
 	}
+	
 	public void addOrganizacion(Organizacion organizacion1) {
 		this.getOrganizaciones().add(organizacion1);
 		
