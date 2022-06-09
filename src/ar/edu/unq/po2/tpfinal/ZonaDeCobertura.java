@@ -105,9 +105,8 @@ public class ZonaDeCobertura {
 		return epicentro.distanciaEnKm(ubicacion);
 	}
 
-	public Object notificar(Muestra muestra, String string) {
+	public void notificar(Muestra muestra, String string) {
 		// TODO Auto-generated method stub
-		return null;
 	}
 	
 	
