@@ -67,11 +67,9 @@ public class AplicacionWeb {
 
 	private void avisoNuevaMuestraZonas(Muestra muestra) {
 		/**
-		 * Dispara la notificacion de nueva muestra para las zonas de cobertura donde la muestra esté ubicada
+		 * Dispara la notificacion de nueva muestra 
 		 */
 		this.getZonasDeCobertura()
-				.stream()
-				.filter(zona -> zona.muestraEstaDentroDeZona(muestra)) 
 				.forEach(zona -> zona.notificar(muestra, "Nueva muestra"));
 	}
 	

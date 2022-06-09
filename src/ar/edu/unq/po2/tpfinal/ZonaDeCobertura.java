@@ -24,27 +24,41 @@ public class ZonaDeCobertura {
 	private Ubicacion epicentro;  
 	private double radio;
 	private AplicacionWeb appWeb; 
-	private List<ObserverZona> Observers; 
-
+	private List<ObserverZona> observers; 
+	
+	
+	//getters
+	protected String getNombreZona() {
+		return nombreZona;
+	}
+	protected Ubicacion getEpicentro() {
+		return epicentro;
+	}
+	protected double getRadio() {
+		return radio;
+	}
+	protected List<ObserverZona> getObservers() {
+		return observers;
+	}
+	private void setObservers(ArrayList<ObserverZona> arrayList) {
+		this.observers = arrayList;
+	}
+	
+	
+	//setters
 	protected void setNombreZona(String nombreZona) {
 		this.nombreZona = nombreZona;
 	}
-
 	protected void setEpicentro(Ubicacion epicentro) {
 		this.epicentro = epicentro;
 	}
-
 	protected void setRadio(double radio) {
 		this.radio = radio;
 	}
-
 	protected void setAppWeb(AplicacionWeb appWeb) {
 		this.appWeb = appWeb;
 	}
-	
-	private void setObservers(ArrayList<ObserverZona> arrayList) {
-		this.Observers = arrayList;
-	}
+
 
 
 	public ZonaDeCobertura(String string, Ubicacion epicentro, double d, AplicacionWeb app) { 
@@ -55,23 +69,7 @@ public class ZonaDeCobertura {
 		this.setObservers(new ArrayList<ObserverZona>());
 	}
 
-
-
-	protected String getNombreZona() {
-		return nombreZona;
-	}
-
-	protected Ubicacion getEpicentro() {
-		return epicentro;
-	}
-
-	protected double getRadio() {
-		return radio;
-	}
 	
-	protected List<ObserverZona> getObservers() {
-		return Observers;
-	}
 
 	public List<Muestra> muestrasDentroDeZona() {
 		/**
@@ -130,8 +128,5 @@ public class ZonaDeCobertura {
 		
 	}
 	
-	
-
-
 
 }
