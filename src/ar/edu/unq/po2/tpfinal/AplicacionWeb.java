@@ -58,19 +58,19 @@ public class AplicacionWeb {
 	
 	public void addMuestra(Muestra muestra) {
 		/**
-		 * Agrega muestra y avisa a las zonas de cobertura
+		 * Agrega muestra y avisa a las zonas de cobertura que se cargó una nueva muestra
 		 */
 		this.getMuestras().add(muestra);
-		this.avisoNuevaMuestraZonas(muestra);
+		this.avisoMuestraZonas(muestra, TipoAvisoZona.NUEVA_MUESTRA);
 	}
 	
 
-	private void avisoNuevaMuestraZonas(Muestra muestra) {
+	private void avisoMuestraZonas(Muestra muestra, TipoAvisoZona tipoAviso) {
 		/**
-		 * Dispara la notificacion de nueva muestra 
+		 * Dispara la notificacion de aviso a las zonas 
 		 */
 		this.getZonasDeCobertura()
-				.forEach(zona -> zona.notificar(muestra, TipoAvisoZona.NUEVA_MUESTRA));
+				.forEach(zona -> zona.notificar(muestra, tipoAviso));
 	}
 	
 	public void addUsuario(Persona persona) {
