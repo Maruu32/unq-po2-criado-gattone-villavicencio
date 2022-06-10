@@ -68,10 +68,11 @@ public class Organizacion implements ObserverZona{
 
 	
 	@Override
-	public void update(ZonaDeCobertura zonaDeCobertura, Muestra muestra1, String cambio) {
-		if (cambio.equals("Nueva Muestra")) 
+	public void update(ZonaDeCobertura zonaDeCobertura, Muestra muestra1, TipoAvisoZona tipoAviso) {
+		if (tipoAviso.equals(TipoAvisoZona.NUEVA_MUESTRA)) 
 			this.getAccionProgramadaNuevaMuestra().nuevoEvento(this, zonaDeCobertura, muestra1);
-		else this.getAccionProgramadaMuestraValidada().nuevoEvento(this, zonaDeCobertura, muestra1);
+		else 
+			this.getAccionProgramadaMuestraValidada().nuevoEvento(this, zonaDeCobertura, muestra1);
 		
 	}
 

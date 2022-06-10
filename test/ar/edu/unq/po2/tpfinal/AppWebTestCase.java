@@ -97,9 +97,9 @@ class AppWebTestCase {
 		app.addMuestra(muestra1);
 		
 		// verify
-		verify(zona1, times(1)).notificar(muestra1, "Nueva muestra");
-		verify(zona2, times(1)).notificar(muestra1, "Nueva muestra");
-		verify(zona3, times(1)).notificar(muestra1,"Nueva muestra");
+		verify(zona1, times(1)).notificar(muestra1, TipoAvisoZona.NUEVA_MUESTRA);
+		verify(zona2, times(1)).notificar(muestra1, TipoAvisoZona.NUEVA_MUESTRA);
+		verify(zona3, times(1)).notificar(muestra1, TipoAvisoZona.NUEVA_MUESTRA);
 		
 	}
 	

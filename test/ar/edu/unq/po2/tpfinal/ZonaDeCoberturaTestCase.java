@@ -140,16 +140,16 @@ class ZonaDeCoberturaTestCase {
 		zonaDeCobertura.addObserver(orga3);
 		
 		// excersice
-		zonaDeCobertura.notificar(muestra1, "Nueva muestra");
-		zonaDeCobertura.notificar(muestra2, "Muestra validada");
+		zonaDeCobertura.notificar(muestra1, TipoAvisoZona.NUEVA_MUESTRA);
+		zonaDeCobertura.notificar(muestra2, TipoAvisoZona.MUESTRA_VALIDADA);
 		
 		//Verify
-		verify(orga1, times(1)).update(zonaDeCobertura, muestra1, "Nueva muestra");
-		verify(orga2, times(1)).update(zonaDeCobertura, muestra1, "Nueva muestra");
-		verify(orga3, times(1)).update(zonaDeCobertura, muestra1, "Nueva muestra");
-		verify(orga1, times(1)).update(zonaDeCobertura, muestra2, "Muestra validada");
-		verify(orga2, times(1)).update(zonaDeCobertura, muestra2, "Muestra validada");
-		verify(orga3, times(1)).update(zonaDeCobertura, muestra2, "Muestra validada");
+		verify(orga1, times(1)).update(zonaDeCobertura, muestra1, TipoAvisoZona.NUEVA_MUESTRA);
+		verify(orga2, times(1)).update(zonaDeCobertura, muestra1, TipoAvisoZona.NUEVA_MUESTRA);
+		verify(orga3, times(1)).update(zonaDeCobertura, muestra1, TipoAvisoZona.NUEVA_MUESTRA);
+		verify(orga1, times(1)).update(zonaDeCobertura, muestra2, TipoAvisoZona.MUESTRA_VALIDADA);
+		verify(orga2, times(1)).update(zonaDeCobertura, muestra2, TipoAvisoZona.MUESTRA_VALIDADA);
+		verify(orga3, times(1)).update(zonaDeCobertura, muestra2, TipoAvisoZona.MUESTRA_VALIDADA);
 	}
 
 }

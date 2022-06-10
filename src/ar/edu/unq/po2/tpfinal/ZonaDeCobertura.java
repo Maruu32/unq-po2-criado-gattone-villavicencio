@@ -115,12 +115,12 @@ public class ZonaDeCobertura {
 		return epicentro.distanciaEnKm(ubicacion);
 	}
 
-	public void notificar(Muestra muestra, String string) {
+	public void notificar(Muestra muestra, TipoAvisoZona tipoAviso) {
 		/**
 		 * Notifica a los observers si la muestra está dentro de la zona de cobertura
 		 */
 		if (this.muestraEstaDentroDeZona(muestra)) 
-			this.getObservers().forEach(observer -> observer.update(this, muestra, string));
+			this.getObservers().forEach(observer -> observer.update(this, muestra, tipoAviso));
 	}
 
 	public void addObserver(ObserverZona orga1) {

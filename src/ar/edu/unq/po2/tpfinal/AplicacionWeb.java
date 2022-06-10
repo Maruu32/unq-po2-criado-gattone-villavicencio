@@ -70,7 +70,7 @@ public class AplicacionWeb {
 		 * Dispara la notificacion de nueva muestra 
 		 */
 		this.getZonasDeCobertura()
-				.forEach(zona -> zona.notificar(muestra, "Nueva muestra"));
+				.forEach(zona -> zona.notificar(muestra, TipoAvisoZona.NUEVA_MUESTRA));
 	}
 	
 	public void addUsuario(Persona persona) {
@@ -84,7 +84,7 @@ public class AplicacionWeb {
 	public void addOrganizacion(Organizacion organizacion1) {
 		this.getOrganizaciones().add(organizacion1);
 	}	
-	
+	 
 	
 
 }
