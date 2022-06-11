@@ -46,7 +46,8 @@ class OperadorRealacionalTestCase {
 	@Test
 	void testMenor() {
 		assertEquals(false, menor.evaluar(fecha2, fecha1));
-		assertEquals(true, menor.evaluar(fecha1, fecha2));
+		assertEquals(false, menor.evaluar(fecha1, fecha2));
+		assertEquals(true, menor.evaluar(fecha2, fecha3));
 	}
 	
 	@Test
@@ -62,5 +63,4 @@ class OperadorRealacionalTestCase {
 		assertEquals(false, menorIgual.evaluar(fecha3, fecha1));
 		assertEquals(true, menorIgual.evaluar(fecha1, fecha3));
 	}
-
 }
