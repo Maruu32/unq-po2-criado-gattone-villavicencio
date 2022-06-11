@@ -129,6 +129,11 @@ public class Muestra {
 	public Date getFechaCreacion(){
 		return this.fechaCreacion;
 	}
+
+	public EspecieVinchuca getTipo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 
