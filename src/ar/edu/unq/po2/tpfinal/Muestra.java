@@ -2,6 +2,7 @@ package ar.edu.unq.po2.tpfinal;
 
 
 import java.awt.image.BufferedImage;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -12,7 +13,7 @@ public class Muestra {
 	private BufferedImage foto;
 	private Ubicacion ubicacion;
 	private Usuario usuario;
-	private Date fechaCreacion = new Date();
+	private LocalDate fechaCreacion = LocalDate.now();
 	private List <Opinion> opinionesExp = new ArrayList <>();
 	private List <Opinion> opinionesBas = new ArrayList <>();
 	
@@ -23,7 +24,7 @@ public class Muestra {
 	public Muestra( Ubicacion u, BufferedImage foto, Opinion aOpinion) {
 		this.setUbicacion(u); 
 		this.setFoto(foto);
-		
+		 
 		/**
 		 * @author LeO
 		 * 
@@ -126,7 +127,7 @@ public class Muestra {
 		return usuario;
 	}
 	
-	public Date getFechaCreacion(){
+	public LocalDate getFechaCreacion(){
 		return this.fechaCreacion;
 	}
 

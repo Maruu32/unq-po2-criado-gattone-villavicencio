@@ -40,7 +40,7 @@ class EstrategiaDeBusquedaNivelDeVerificacionTestCase {
 		HashSet<Muestra> resultadoEsperado = new HashSet<Muestra>();
 		resultadoEsperado.add(muestra0);
 				
-		//Excersice
+		//Excercise
 		HashSet<Muestra> resultadoBusqueda = eTipoDeinsecto.buscar(muestras);
 		
 		//Verify
