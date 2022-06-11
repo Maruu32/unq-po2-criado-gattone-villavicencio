@@ -12,9 +12,9 @@ import java.util.HashSet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class EstrategiaDeBusquedaPorFechaDeCreacionTestCase {
+class EstrategiaDeBusquedaPorFechaDeUltimaVotacionTestCase {
 	
-	EstrategiaDeBusquedaPorFechaDeCreacion eBusquedaFechaCreacion; //SUT
+	EstrategiaDeBusquedaPorFechaDeUltimaVotacion eBusquedaFechaUltimaVotacion; //SUT
 	HashSet<Muestra> muestras;			//DOC
 	Muestra muestra0;	//DOC
 	Muestra muestra1;	//DOC
@@ -30,13 +30,13 @@ class EstrategiaDeBusquedaPorFechaDeCreacionTestCase {
 		muestra2 = mock(Muestra.class);
 		operador = mock(OperadorRelacional.class);
 		fecha = LocalDate.parse("2020-06-09");
-		eBusquedaFechaCreacion = new EstrategiaDeBusquedaPorFechaDeCreacion(operador, fecha);
+		eBusquedaFechaUltimaVotacion = new EstrategiaDeBusquedaPorFechaDeUltimaVotacion(operador, fecha);
 		muestras.add(muestra0);
 		muestras.add(muestra1);
 		muestras.add(muestra2);
-		when(muestra0.getFechaCreacion()).thenReturn(LocalDate.parse("2020-06-09"));
-		when(muestra1.getFechaCreacion()).thenReturn(LocalDate.parse("2020-06-23"));
-		when(muestra2.getFechaCreacion()).thenReturn(LocalDate.parse("2020-07-03"));
+		when(muestra0.getFechaUltimaVotacion()).thenReturn(LocalDate.parse("2020-06-09")); //TODO: implementar en Muestra
+		when(muestra1.getFechaUltimaVotacion()).thenReturn(LocalDate.parse("2020-06-23"));
+		when(muestra2.getFechaUltimaVotacion()).thenReturn(LocalDate.parse("2020-07-03"));
 		
 	}
 
@@ -49,7 +49,7 @@ class EstrategiaDeBusquedaPorFechaDeCreacionTestCase {
 		when(operador.evaluar(LocalDate.parse("2020-06-09"), LocalDate.parse("2020-06-09"))).thenReturn(true);
 		
 		//Excercise
-		HashSet<Muestra> resultadoBusqueda = eBusquedaFechaCreacion.buscar(muestras);
+		HashSet<Muestra> resultadoBusqueda = eBusquedaFechaUltimaVotacion.buscar(muestras);
 		
 		
 		//Verify

@@ -135,6 +135,11 @@ public class Muestra {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public Object getFechaUltimaVotacion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 
