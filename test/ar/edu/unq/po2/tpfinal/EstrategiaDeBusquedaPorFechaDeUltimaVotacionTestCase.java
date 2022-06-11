@@ -55,9 +55,9 @@ class EstrategiaDeBusquedaPorFechaDeUltimaVotacionTestCase {
 		//Verify
 		assertEquals(true, resultadoBusqueda.containsAll(resultadoEsperado));
 		assertEquals(1, resultadoBusqueda.size());
-		verify(muestra0, times(1)).getFechaCreacion();
-		verify(muestra1, times(1)).getFechaCreacion();
-		verify(muestra2, times(1)).getFechaCreacion();
+		verify(muestra0, times(1)).getFechaUltimaVotacion();
+		verify(muestra1, times(1)).getFechaUltimaVotacion();
+		verify(muestra2, times(1)).getFechaUltimaVotacion();
 		verify(operador, times(1)).evaluar(LocalDate.parse("2020-06-09"), LocalDate.parse("2020-06-09"));
 	}
 

@@ -136,7 +136,7 @@ public class Muestra {
 		return null;
 	}
 
-	public Object getFechaUltimaVotacion() {
+	public LocalDate getFechaUltimaVotacion() {
 		// TODO Auto-generated method stub
 		return null;
 	}
