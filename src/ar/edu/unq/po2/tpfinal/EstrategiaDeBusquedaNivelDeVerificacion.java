@@ -33,7 +33,7 @@ public class EstrategiaDeBusquedaNivelDeVerificacion implements EstrategiaDeBusq
 		 */
 		return (HashSet<Muestra>) muestras
 				.stream()
-				.filter(muestra -> nivelDeVerificacion.value(muestra.estaVerificada()))
+				.filter(muestra -> nivelDeVerificacion.value() == muestra.estaVerificada())
 				.collect(Collectors.toSet());
 	}
 

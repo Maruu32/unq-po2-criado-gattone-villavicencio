@@ -8,8 +8,8 @@ public enum NivelVerificacion {
 	VOTADA,
 	VALIDADA;
 	
-	public boolean value(boolean b) {
-		return this.ordinal() == 0 ? !b : b; 
+	public boolean value() {
+		return this.ordinal() == 0 ? false : true; 
 	}
 }
 
