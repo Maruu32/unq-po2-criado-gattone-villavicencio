@@ -7,10 +7,12 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class BuscadorTestCase {
 	
@@ -45,9 +47,9 @@ class BuscadorTestCase {
 		buscador1.buscar(eBusqueda1);
 		
 		//Verify
-		assertEqual(eBusqueda1, buscador1.getEstrategiaBusqueda());
+		assertEquals(eBusqueda1, buscador1.getEstrategiaDeBusqueda());
 		verify(app, times(1)).getMuestras();
-		verify(eBusqueda1, times(1)).buscar(muestras);
+		verify(eBusqueda1, times(1)).buscar(Mockito.<HashSet<Muestra>>any());
 		
 	}
 
