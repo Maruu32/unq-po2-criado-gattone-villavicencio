@@ -65,7 +65,7 @@ public class AplicacionWeb {
 	}
 	
 
-	private void avisoMuestraZonas(Muestra muestra, TipoAvisoZona tipoAviso) {
+	public void avisoMuestraZonas(Muestra muestra, TipoAvisoZona tipoAviso) {
 		/**
 		 * Dispara la notificacion de aviso a las zonas 
 		 */

@@ -151,5 +151,5 @@ class ZonaDeCoberturaTestCase {
 		verify(orga2, times(1)).update(zonaDeCobertura, muestra2, TipoAvisoZona.MUESTRA_VALIDADA);
 		verify(orga3, times(1)).update(zonaDeCobertura, muestra2, TipoAvisoZona.MUESTRA_VALIDADA);
 	}
-
+ 
 }
