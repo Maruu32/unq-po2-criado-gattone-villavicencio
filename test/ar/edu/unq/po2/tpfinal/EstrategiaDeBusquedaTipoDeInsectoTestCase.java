@@ -1,26 +1,23 @@
 package ar.edu.unq.po2.tpfinal;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 class EstrategiaDeBusquedaTipoDeInsectoTestCase {
 	
 	EstrategiaDeBusquedaTipoDeInsecto eTipoDeinsecto;	//SUT
 	HashSet<Muestra> muestras;			//DOC
-	Muestra muestra0;
-	Muestra muestra1;
-	Muestra muestra2;
+	Muestra muestra0;	//DOC
+	Muestra muestra1;	//DOC
+	Muestra muestra2;	//DOC
 
 
 	@BeforeEach
