@@ -15,10 +15,6 @@ public class EstrategiaDeBusquedaNivelDeVerificacion implements EstrategiaDeBusq
 	 * @return
 	 */
 
-	protected NivelVerificacion getNivelDeVerificacion() {
-		return nivelDeVerificacion;
-	}
-
 	protected void setNivelDeVerificacion(NivelVerificacion nivelDeVerificacion) {
 		this.nivelDeVerificacion = nivelDeVerificacion;
 	}

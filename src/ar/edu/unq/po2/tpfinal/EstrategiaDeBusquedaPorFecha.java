@@ -15,9 +15,9 @@ public abstract class  EstrategiaDeBusquedaPorFecha {
 	 */
 
 	private LocalDate fechaBuscada;
-	private OperadorRelacional operadorRelacional;
+	private OperadorRelacionalFechas operadorRelacional;
 
-	public EstrategiaDeBusquedaPorFecha(OperadorRelacional operador, LocalDate fecha) {
+	public EstrategiaDeBusquedaPorFecha(OperadorRelacionalFechas operador, LocalDate fecha) {
 		this.setOperadorRelacional(operador);
 		this.setFechaBuscada(fecha);
 	}
@@ -26,7 +26,7 @@ public abstract class  EstrategiaDeBusquedaPorFecha {
 		this.fechaBuscada = fecha;	
 	}
 
-	protected void setOperadorRelacional(OperadorRelacional operador) {
+	protected void setOperadorRelacional(OperadorRelacionalFechas operador) {
 		this.operadorRelacional = operador;
 	}
 
@@ -34,7 +34,7 @@ public abstract class  EstrategiaDeBusquedaPorFecha {
 		return fechaBuscada;
 	}
 
-	protected OperadorRelacional getOperadorRelacional() {
+	protected OperadorRelacionalFechas getOperadorRelacional() {
 		return operadorRelacional;
 	}
 	

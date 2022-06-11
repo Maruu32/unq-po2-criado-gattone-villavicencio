@@ -14,14 +14,14 @@ public class EstrategiaDeBusquedaPorFechaDeCreacion extends EstrategiaDeBusqueda
 	 * @param fecha es la fecha buscada
 	 */
 
-	public EstrategiaDeBusquedaPorFechaDeCreacion(OperadorRelacional operador, LocalDate fecha) {
+	public EstrategiaDeBusquedaPorFechaDeCreacion(OperadorRelacionalFechas operador, LocalDate fecha) {
 		super(operador,fecha);
 	}	
 	
 
 	@Override
 	public HashSet<Muestra> buscar(HashSet<Muestra> muestrasSet) {
-		OperadorRelacional operador = this.getOperadorRelacional();
+		OperadorRelacionalFechas operador = this.getOperadorRelacional();
 		return (HashSet<Muestra>) muestrasSet
 				.stream()
 				.filter(muestra -> operador.evaluar(muestra.getFechaCreacion(), this.getFechaBuscada()))

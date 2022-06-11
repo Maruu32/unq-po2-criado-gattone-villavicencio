@@ -19,7 +19,7 @@ class EstrategiaDeBusquedaPorFechaDeCreacionTestCase {
 	Muestra muestra0;	//DOC
 	Muestra muestra1;	//DOC
 	Muestra muestra2;	//DOC
-	OperadorRelacional operador; //DOC
+	OperadorRelacionalFechas operador; //DOC
 	LocalDate fecha;
 
 	@BeforeEach
@@ -28,7 +28,7 @@ class EstrategiaDeBusquedaPorFechaDeCreacionTestCase {
 		muestra0 = mock(Muestra.class);
 		muestra1 = mock(Muestra.class);
 		muestra2 = mock(Muestra.class);
-		operador = mock(OperadorRelacional.class);
+		operador = mock(OperadorRelacionalFechas.class);
 		fecha = LocalDate.parse("2020-06-09");
 		eBusquedaFechaCreacion = new EstrategiaDeBusquedaPorFechaDeCreacion(operador, fecha);
 		muestras.add(muestra0);

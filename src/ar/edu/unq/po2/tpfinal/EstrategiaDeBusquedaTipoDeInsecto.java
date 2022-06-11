@@ -14,9 +14,7 @@ public class EstrategiaDeBusquedaTipoDeInsecto implements EstrategiaDeBusqueda {
 	 * 
 	 * @return
 	 */
-	protected EspecieVinchuca getEspecieBuscada() {
-		return especieBuscada;
-	}
+
 
 	protected void setEspecieBuscada(EspecieVinchuca especieBuscada) {
 		this.especieBuscada = especieBuscada;
