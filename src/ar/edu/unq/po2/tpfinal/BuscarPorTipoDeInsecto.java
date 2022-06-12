@@ -3,7 +3,7 @@ package ar.edu.unq.po2.tpfinal;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
-public class EstrategiaDeBusquedaTipoDeInsecto implements EstrategiaDeBusqueda {
+public class BuscarPorTipoDeInsecto implements BuscarPor {
 	
 	protected EspecieVinchuca especieBuscada; 
 	
@@ -20,7 +20,7 @@ public class EstrategiaDeBusquedaTipoDeInsecto implements EstrategiaDeBusqueda {
 		this.especieBuscada = especieBuscada;
 	}
 
-	public EstrategiaDeBusquedaTipoDeInsecto(EspecieVinchuca especieBuscada) {
+	public BuscarPorTipoDeInsecto(EspecieVinchuca especieBuscada) {
 		this.setEspecieBuscada(especieBuscada);
 	}
 

@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
-public class EstrategiaDeBusquedaPorFechaDeCreacion extends EstrategiaDeBusquedaPorFecha implements EstrategiaDeBusqueda {
+public class BuscarPorFechaDeCreacion extends BuscarPorFecha implements BuscarPor {
 	/**
 	 * @author Lenardo Criado
 	 * 
@@ -14,7 +14,7 @@ public class EstrategiaDeBusquedaPorFechaDeCreacion extends EstrategiaDeBusqueda
 	 * @param fecha es la fecha buscada
 	 */
 
-	public EstrategiaDeBusquedaPorFechaDeCreacion(OperadorRelacionalFechas operador, LocalDate fecha) {
+	public BuscarPorFechaDeCreacion(OperadorRelacionalFechas operador, LocalDate fecha) {
 		super(operador,fecha);
 	}	
 	

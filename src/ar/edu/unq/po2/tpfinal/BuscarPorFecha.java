@@ -3,7 +3,7 @@ package ar.edu.unq.po2.tpfinal;
 import java.time.LocalDate;
 import java.util.HashSet;
 
-public abstract class  EstrategiaDeBusquedaPorFecha {
+public abstract class  BuscarPorFecha {
 	
 	/**
 	 * @author Lenardo Criado
@@ -17,7 +17,7 @@ public abstract class  EstrategiaDeBusquedaPorFecha {
 	private LocalDate fechaBuscada;
 	private OperadorRelacionalFechas operadorRelacional;
 
-	public EstrategiaDeBusquedaPorFecha(OperadorRelacionalFechas operador, LocalDate fecha) {
+	public BuscarPorFecha(OperadorRelacionalFechas operador, LocalDate fecha) {
 		this.setOperadorRelacional(operador);
 		this.setFechaBuscada(fecha);
 	}

@@ -3,7 +3,7 @@ package ar.edu.unq.po2.tpfinal;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
-public class EstrategiaDeBusquedaNivelDeVerificacion implements EstrategiaDeBusqueda {
+public class BuscarPorNivelDeVerificacion implements BuscarPor {
 	
 	protected NivelVerificacion nivelDeVerificacion;
 	
@@ -19,7 +19,7 @@ public class EstrategiaDeBusquedaNivelDeVerificacion implements EstrategiaDeBusq
 		this.nivelDeVerificacion = nivelDeVerificacion;
 	}
 
-	public EstrategiaDeBusquedaNivelDeVerificacion(NivelVerificacion votada) {
+	public BuscarPorNivelDeVerificacion(NivelVerificacion votada) {
 		this.setNivelDeVerificacion(votada);
 	}
 

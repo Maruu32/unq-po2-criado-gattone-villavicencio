@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class Or extends OperadorLogico {
 
-	public Or(EstrategiaDeBusqueda estrategia1, EstrategiaDeBusqueda estrategia2) {
+	public Or(BuscarPor estrategia1, BuscarPor estrategia2) {
 		super(estrategia1, estrategia2);
 	}
 

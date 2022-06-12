@@ -16,9 +16,9 @@ class OperadorLogicoTestCase {
 	
 	OperadorLogico or;			//SUT
 	OperadorLogico and;			//SUT
-	EstrategiaDeBusqueda estrategia1;	//DOC
-	EstrategiaDeBusqueda estrategia2;	//DOC
-	EstrategiaDeBusqueda estrategia3;	//DOC
+	BuscarPor estrategia1;	//DOC
+	BuscarPor estrategia2;	//DOC
+	BuscarPor estrategia3;	//DOC
 	HashSet<Muestra> muestras;			//DOC
 	HashSet<Muestra> muestras1;			//DOC
 	HashSet<Muestra> muestras2;			//DOC
@@ -32,9 +32,9 @@ class OperadorLogicoTestCase {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		estrategia1 = mock(EstrategiaDeBusqueda.class);
-		estrategia2 = mock(EstrategiaDeBusqueda.class);
-		estrategia3 = mock(EstrategiaDeBusqueda.class);
+		estrategia1 = mock(BuscarPor.class);
+		estrategia2 = mock(BuscarPor.class);
+		estrategia3 = mock(BuscarPor.class);
 		muestras = new HashSet<Muestra>();
 		muestras1 = new HashSet<Muestra>();
 		muestras2 = new HashSet<Muestra>();

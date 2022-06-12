@@ -22,11 +22,11 @@ class BuscadorTestCase {
 	Muestra muestra0;				//DOC
 	Muestra muestra1;				//DOC
 	Muestra muestra2;				//DOC
-	EstrategiaDeBusqueda eBusqueda1;	//DOC
+	BuscarPor eBusqueda1;	//DOC
 
 	@BeforeEach
 	void setUp() throws Exception {
-		eBusqueda1 = mock(EstrategiaDeBusqueda.class);
+		eBusqueda1 = mock(BuscarPor.class);
 		app = mock(AplicacionWeb.class);
 		muestra0 = mock(Muestra.class);
 		muestra1 = mock(Muestra.class);

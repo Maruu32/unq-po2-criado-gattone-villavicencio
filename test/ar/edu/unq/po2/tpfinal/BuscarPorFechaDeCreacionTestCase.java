@@ -12,9 +12,9 @@ import java.util.HashSet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class EstrategiaDeBusquedaPorFechaDeCreacionTestCase {
+class BuscarPorFechaDeCreacionTestCase {
 	
-	EstrategiaDeBusquedaPorFechaDeCreacion eBusquedaFechaCreacion; //SUT
+	BuscarPorFechaDeCreacion eBusquedaFechaCreacion; //SUT
 	HashSet<Muestra> muestras;			//DOC
 	Muestra muestra0;	//DOC
 	Muestra muestra1;	//DOC
@@ -30,7 +30,7 @@ class EstrategiaDeBusquedaPorFechaDeCreacionTestCase {
 		muestra2 = mock(Muestra.class);
 		operador = mock(OperadorRelacionalFechas.class);
 		fecha = LocalDate.parse("2020-06-09");
-		eBusquedaFechaCreacion = new EstrategiaDeBusquedaPorFechaDeCreacion(operador, fecha);
+		eBusquedaFechaCreacion = new BuscarPorFechaDeCreacion(operador, fecha);
 		muestras.add(muestra0);
 		muestras.add(muestra1);
 		muestras.add(muestra2);

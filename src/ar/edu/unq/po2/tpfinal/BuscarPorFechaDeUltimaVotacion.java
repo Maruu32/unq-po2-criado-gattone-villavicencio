@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
-public class EstrategiaDeBusquedaPorFechaDeUltimaVotacion extends EstrategiaDeBusquedaPorFecha {
+public class BuscarPorFechaDeUltimaVotacion extends BuscarPorFecha {
 	
 	/**
 	 * @author Lenardo Criado
@@ -15,7 +15,7 @@ public class EstrategiaDeBusquedaPorFechaDeUltimaVotacion extends EstrategiaDeBu
 	 * @param fecha es la fecha buscada
 	 */
 
-	public EstrategiaDeBusquedaPorFechaDeUltimaVotacion(OperadorRelacionalFechas operador, LocalDate fecha) {
+	public BuscarPorFechaDeUltimaVotacion(OperadorRelacionalFechas operador, LocalDate fecha) {
 		super(operador, fecha);
 	}
 
