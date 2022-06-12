@@ -57,6 +57,14 @@ class OrganizacionTestCase {
 		assertEquals(fe2, orga1.getAccionProgramadaNuevaMuestra());
 		assertEquals(fe3, orga1.getAccionProgramadaMuestraValidada());
 	}
+	
+	@Test
+	void testGetters() {
+
+		assertEquals(TipoOrganizacion.ASISTENCIA,orga1.getTipo());
+		assertEquals(150,orga1.getTrabajadores());
+		assertEquals(ubicacion1,orga1.getUbicacion());
+	}
 
 	
 }

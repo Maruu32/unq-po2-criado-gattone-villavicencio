@@ -26,7 +26,7 @@ public class Organizacion implements ObserverZona{
 	public TipoOrganizacion getTipo() {
 		return tipo;
 	}
-	public Integer getTrabajdores() {
+	public Integer getTrabajadores() {
 		return trabajdores;
 	}
 	public FuncionalidadExterna getAccionProgramadaNuevaMuestra() {
@@ -68,7 +68,7 @@ public class Organizacion implements ObserverZona{
 
 	
 	@Override
-	public void update(ZonaDeCobertura zonaDeCobertura, Muestra muestra1, TipoAvisoZona tipoAviso) {
+	public void update(ZonaDeCobertura zonaDeCobertura, Muestra muestra1, TipoAvisoZona tipoAviso) {//TODO: ver si se puede hacer mejor
 		if (tipoAviso.equals(TipoAvisoZona.NUEVA_MUESTRA)) 
 			this.getAccionProgramadaNuevaMuestra().nuevoEvento(this, zonaDeCobertura, muestra1);
 		else 

@@ -20,4 +20,5 @@ public class ValidacionMuestraExperto implements ValidacionMuestra{
 	public Boolean esMuestraVerificada(Muestra m) {
 		return EspecieNoDefinida.UNDEFINED != m.getMuestraValidadaActual() && m.getOpinionesExpertos().size() == 2;
 	}
+	
 }

@@ -1,8 +1,8 @@
 package ar.edu.unq.po2.tpfinal;
 
-import ar.edu.unq.po2.tpfinal.Opinion;
 
 import java.awt.image.BufferedImage;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ public class Muestra {
 	private BufferedImage foto;
 	private Ubicacion ubicacion;
 	private Usuario usuario;
-	private Date fechaCreacion = new Date();
+	private LocalDate fechaCreacion = LocalDate.now();
 	private List <Opinion> opinionesExp = new ArrayList <>();
 	private List <Opinion> opinionesBas = new ArrayList <>();
 	
@@ -24,11 +24,24 @@ public class Muestra {
 	public Muestra( Ubicacion u, BufferedImage foto, Opinion aOpinion) {
 		this.setUbicacion(u); 
 		this.setFoto(foto);
+		 
+		/**
+		 * @author LeO
+		 * 
+		 * no se está guardando la primer opinion
+		 * 
+		 */	
 		
 	}
 	
 	private void registrar() {
 		registradas.add(this);
+		/**
+		 * @author LeO
+		 * 
+		 * Creo que el registrar está de mas ya que la lista de muestras se lleva desde la AplicacionWeb
+		 * 
+		 */
 	}
 	
 //Devuelve la clasificacion de muestra que mas opiniones tuvo. 
@@ -49,6 +62,13 @@ public class Muestra {
 			//Si ya existe, con get(tipo) traigo el valor para ese tipo de muestra y le sumo uno, sino le asigno 1 
 			cv.put(tipo, cv.containsKey(tipo) ? cv.get(tipo)+1 : 1);
 		}
+		
+		/**@author Lenardo Criado
+		 * 
+		 * estaVerificada()
+		 * 
+		 * TODO: agregar aviso a zonas si la muestra, está validada.
+		 */
 	}
 	
 	//Devuelve el tipo de muestra que mas opiniones tuvo.
@@ -107,8 +127,18 @@ public class Muestra {
 		return usuario;
 	}
 	
-	public Date getFechaCreacion(){
+	public LocalDate getFechaCreacion(){
 		return this.fechaCreacion;
+	}
+
+	public EspecieVinchuca getTipo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public LocalDate getFechaUltimaVotacion() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

@@ -2,9 +2,6 @@ package ar.edu.unq.po2.tpfinal;
 
 import java.util.Date;
 
-import ar.edu.unq.po2.tpfinal.ClasificacionMuestra;
-import ar.edu.unq.po2.tpfinal.Usuario;
-
 
 public class Opinion {
 	private Date fechaCreacion = new Date();
