@@ -26,7 +26,7 @@ public class Organizacion implements ObserverZona{
 	public TipoOrganizacion getTipo() {
 		return tipo;
 	}
-	public Integer getTrabajdores() {
+	public Integer getTrabajadores() {
 		return trabajdores;
 	}
 	public FuncionalidadExterna getAccionProgramadaNuevaMuestra() {
