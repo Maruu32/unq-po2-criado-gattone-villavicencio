@@ -8,9 +8,9 @@ public class UExpertoSiempre implements EstadoUsuario  {
 	private Usuario usuario;
 
 	@Override
-	public void opinar(Usuario usuario) {
+	public void opinar(ClasificacionMuestra clasificacion) {
 		if (puedeOpinar()) {
-			AplicacionWeb.agregarOpinion(new Opinion(usuario, muestra, this, LocalDate.now()));
+			AplicacionWeb.agregarOpinion(new Opinion(usuario, muestra, this, clasificacion));  
 		}
 		
 	}

@@ -18,14 +18,18 @@ public class Usuario {
 		misMuestras = new ArrayList<Muestra>();
 		misOpiniones = new ArrayList<Opinion>();
 	}
-
-	public void opinar() {
-		estadoUsuario.opinar(this);
+	
+	public void nuevaMuestra(ClasificacionMuestra cmuestra, Ubicacion ubicacion) {
+		AplicacionWeb.agregarMuestra(new Muestra(this, cmuestra, ubicacion));
 	}
 
-	public void setEstadoUsuario(UExperto uExperto) {
-		// TODO Auto-generated method stub 
+	public void opinar(ClasificacionMuestra clasificacion) {
+		estadoUsuario.opinar(clasificacion);
 		
+	}
+	
+	public void setEstadoUsuario(EstadoUsuario _estadoUsuario) { 
+		estadoUsuario = _estadoUsuario;
 	}
 
 	public ArrayList<Muestra> getMisMuestras() {
@@ -35,12 +39,12 @@ public class Usuario {
 	public ArrayList<Opinion> getMisOpiniones() {
 		return misOpiniones;
 	}
-	
-	public long contarDias(LocalDate inicio, LocalDate fin) {
-		 long dias = ChronoUnit.DAYS.between(inicio,fin);
-		 return dias;
+
+	public EstadoUsuario getEstadoUsuario() {
+		// TODO Auto-generated method stub
+		return estadoUsuario;
 	}
-	
+
 
 
 	

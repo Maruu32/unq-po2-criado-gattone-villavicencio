@@ -8,12 +8,14 @@ public class Opinion {
 	private Muestra muestra;
 	private EstadoUsuario estado;
 	private LocalDate fecha;
+	private ClasificacionMuestra clasificacion;
 	
-	public Opinion (Usuario usuario, Muestra muestra, EstadoUsuario estado,LocalDate fecha){
-		usuario = usuario;
-		muestra = muestra;
-		estado = estado;
-		fecha = fecha;
+	public Opinion (Usuario _usuario, Muestra _muestra, EstadoUsuario _estado, ClasificacionMuestra _clasificacion){ 
+		usuario = _usuario;
+		muestra = _muestra;
+		estado = _estado;
+		fecha = LocalDate.now();
+		clasificacion =_clasificacion;
 	}
 
 	public LocalDate getFecha() {

@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-public class AplicacionWeb {
+public class AplicacionWeb { 
 	
 	private ArrayList<Usuario> usuarios;
-	
+	private static List<Muestra> muestras;
 	private static ArrayList<Opinion> opiniones;
 
 	public List<Muestra> getMuestras() {
@@ -25,6 +25,12 @@ public class AplicacionWeb {
 		
 	}
 
+	public static void agregarMuestra(Muestra muestra) {
+		muestras.add(muestra);
+		
+	}
+	
+	
 	public ArrayList<Opinion> getOpiniones() {
 		return opiniones;
 	}
@@ -34,6 +40,8 @@ public class AplicacionWeb {
 		usuarios.add(usuario);
 		
 	}
+	
+
 
 
 
