@@ -20,8 +20,8 @@ public class UBasico implements EstadoUsuario  {
 	@Override
 	public void opinar(ClasificacionMuestra clasificacion) {
 		//crea una opinion si puede opinar en la Muestra
-		if (puedeOpiniar()) {
-			 AplicacionWeb.agregarOpinion(new Opinion(usuario, muestra, this, clasificacion));
+		if (puedeOpinar()) {
+			 usuario.getAp().agregarOpinion(new Opinion(usuario, muestra, clasificacion));
 			 subirCategoria(usuario);	
 		}
 		
@@ -37,21 +37,21 @@ public class UBasico implements EstadoUsuario  {
 
 	private boolean realizoVeinteOpiniones(){
 		ArrayList<Opinion> resultado = new ArrayList<>();
-		usuario.getMisOpiniones().parallelStream().filter(p->contarDias(p.getFecha(),LocalDate.now())>30).forEach(p -> resultado.add(p));
+		usuario.getMisOpiniones().parallelStream().filter(p->contarDias(p.getFechaCreacion(),LocalDate.now())>30).forEach(p -> resultado.add(p));
 		return resultado.size() > 20;
 	}
 
 
 	private boolean relizoDiezMuestras() {
 		ArrayList<Muestra> resultado = new ArrayList<>();
-		usuario.getMisMuestras().parallelStream().filter(p->contarDias(p.getFecha(),LocalDate.now())>30 ).forEach(p -> resultado.add(p));
+		usuario.getMisMuestras().parallelStream().filter(p->contarDias(p.getFechaCreacion(),LocalDate.now())>30 ).forEach(p -> resultado.add(p));
 		return resultado.size() > 10;
 	}
-
-
-	public boolean puedeOpiniar(){
-		//devuelve true si otodos alcanaza la cantidad que pide de muestras y de opiniones
-		return relizoDiezMuestras() && realizoVeinteOpiniones() ;
+	
+	
+	public boolean puedeOpinar() {
+		//devuelve true la lista de opinones de experto esta vacia
+		return muestra.getOpinionesExpertos().isEmpty();
 	}
 	
 	public long contarDias(LocalDate inicio, LocalDate fin) {
@@ -59,6 +59,10 @@ public class UBasico implements EstadoUsuario  {
 		 long dias = ChronoUnit.DAYS.between(inicio,fin);
 		 return dias;
 	}
+
+
+
+
 
 
 }

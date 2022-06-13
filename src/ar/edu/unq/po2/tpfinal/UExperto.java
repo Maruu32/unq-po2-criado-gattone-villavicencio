@@ -7,6 +7,7 @@ public class UExperto implements EstadoUsuario  {
 	private Muestra muestra;
 	private Usuario usuario;
 	
+	
 	public UExperto(Usuario _usuario) { 
 		usuario = _usuario; 
 	}
@@ -14,9 +15,14 @@ public class UExperto implements EstadoUsuario  {
 	@Override
 	public void opinar(ClasificacionMuestra clasificacion) {
 		//si puede opinar crea un opinion 
-	  if(true){
-		  	AplicacionWeb.agregarOpinion(new Opinion(usuario, muestra, this, clasificacion));
+	  if(!puedeOpinar()){
+		  usuario.getAp().agregarOpinion(new Opinion(usuario, muestra, clasificacion));
 	  }
+	}
+	@Override
+	public boolean puedeOpinar() {
+		// TODO Auto-generated method stub
+		return muestra.estaVerificada();
 	}
 
 }

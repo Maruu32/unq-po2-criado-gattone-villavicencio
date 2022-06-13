@@ -28,6 +28,9 @@ class ZonaDeCoberturaTestCase {
 	Muestra muestra3;		//DOC
 	Muestra muestra4;		//DOC
 	AplicacionWeb app;		//DOC
+	ObserverZona orga1;		//DOC
+	ObserverZona orga2;		//DOC
+	ObserverZona orga3;		//DOC
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -45,6 +48,9 @@ class ZonaDeCoberturaTestCase {
 		zonaDeCobertura2 = mock(ZonaDeCobertura.class);
 		zonaDeCobertura3 = mock(ZonaDeCobertura.class);
 		zonaDeCobertura4 = mock(ZonaDeCobertura.class);
+		orga1 = mock(ObserverZona.class);
+		orga2 = mock(ObserverZona.class);
+		orga3 = mock(ObserverZona.class);
 		
 	}
 
@@ -125,5 +131,25 @@ class ZonaDeCoberturaTestCase {
 		verify(zonaDeCobertura4, times(1)).getRadio();
 		verify(app, times(1)).getZonasDeCobertura();
 	}
-
+	
+	@Test
+	void testNotificar() {
+		// Setup
+		zonaDeCobertura.addObserver(orga1);
+		zonaDeCobertura.addObserver(orga2);
+		zonaDeCobertura.addObserver(orga3);
+		
+		// excersice
+		zonaDeCobertura.notificar(muestra1, TipoAvisoZona.NUEVA_MUESTRA);
+		zonaDeCobertura.notificar(muestra2, TipoAvisoZona.MUESTRA_VALIDADA);
+		
+		//Verify
+		verify(orga1, times(1)).update(zonaDeCobertura, muestra1, TipoAvisoZona.NUEVA_MUESTRA);
+		verify(orga2, times(1)).update(zonaDeCobertura, muestra1, TipoAvisoZona.NUEVA_MUESTRA);
+		verify(orga3, times(1)).update(zonaDeCobertura, muestra1, TipoAvisoZona.NUEVA_MUESTRA);
+		verify(orga1, times(1)).update(zonaDeCobertura, muestra2, TipoAvisoZona.MUESTRA_VALIDADA);
+		verify(orga2, times(1)).update(zonaDeCobertura, muestra2, TipoAvisoZona.MUESTRA_VALIDADA);
+		verify(orga3, times(1)).update(zonaDeCobertura, muestra2, TipoAvisoZona.MUESTRA_VALIDADA);
+	}
+ 
 }

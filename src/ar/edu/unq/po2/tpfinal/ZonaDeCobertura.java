@@ -1,12 +1,13 @@
 package ar.edu.unq.po2.tpfinal;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ZonaDeCobertura {
 	
 	/**
-	 * @author LeO
+	 * @author Lenardo Criado
 	 * 
 	 * @since 01/06/2022
 	 * 
@@ -23,22 +24,41 @@ public class ZonaDeCobertura {
 	private Ubicacion epicentro;  
 	private double radio;
 	private AplicacionWeb appWeb; 
-
+	private List<ObserverZona> observers; 
+	
+	
+	//getters
+	protected String getNombreZona() {
+		return nombreZona;
+	}
+	protected Ubicacion getEpicentro() {
+		return epicentro;
+	}
+	protected double getRadio() {
+		return radio;
+	}
+	protected List<ObserverZona> getObservers() {
+		return observers;
+	}
+	private void setObservers(ArrayList<ObserverZona> arrayList) {
+		this.observers = arrayList;
+	}
+	
+	
+	//setters
 	protected void setNombreZona(String nombreZona) {
 		this.nombreZona = nombreZona;
 	}
-
 	protected void setEpicentro(Ubicacion epicentro) {
 		this.epicentro = epicentro;
 	}
-
 	protected void setRadio(double radio) {
 		this.radio = radio;
 	}
-
 	protected void setAppWeb(AplicacionWeb appWeb) {
 		this.appWeb = appWeb;
 	}
+
 
 
 	public ZonaDeCobertura(String string, Ubicacion epicentro, double d, AplicacionWeb app) { 
@@ -46,19 +66,10 @@ public class ZonaDeCobertura {
 		this.setEpicentro(epicentro); 
 		this.setRadio(d);
 		this.setAppWeb(app);
+		this.setObservers(new ArrayList<ObserverZona>());
 	}
 
-	protected String getNombreZona() {
-		return nombreZona;
-	}
-
-	protected Ubicacion getEpicentro() {
-		return epicentro;
-	}
-
-	protected double getRadio() {
-		return radio;
-	}
+	
 
 	public List<Muestra> muestrasDentroDeZona() {
 		/**
@@ -103,5 +114,19 @@ public class ZonaDeCobertura {
 		Ubicacion epicentro = this.getEpicentro();
 		return epicentro.distanciaEnKm(ubicacion);
 	}
+
+	public void notificar(Muestra muestra, TipoAvisoZona tipoAviso) {
+		/**
+		 * Notifica a los observers si la muestra está dentro de la zona de cobertura
+		 */
+		if (this.muestraEstaDentroDeZona(muestra)) 
+			this.getObservers().forEach(observer -> observer.update(this, muestra, tipoAviso));
+	}
+
+	public void addObserver(ObserverZona orga1) {
+		this.getObservers().add(orga1);
+		
+	}
+	
 
 }

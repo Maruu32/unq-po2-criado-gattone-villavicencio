@@ -1,48 +1,101 @@
 package ar.edu.unq.po2.tpfinal;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
-
-public class AplicacionWeb { 
+public class AplicacionWeb {
+	static List<Muestra> muestras;
+	List<ZonaDeCobertura> zonasDeCobertura;
+	List<Organizacion> organizaciones;
+	List<Persona> usuarios;
+	static ArrayList<Opinion> opiniones;
 	
-	private ArrayList<Usuario> usuarios;
-	private static List<Muestra> muestras;
-	private static ArrayList<Opinion> opiniones;
-
+	/**
+	 * @author Leonardo Criado
+	 * 
+	 * La responsabilidad de esta clase es ser el main del programa y consolidar las clases que la componen
+	 *  
+	 * @return
+	 */
+	
+	
+	//getters
 	public List<Muestra> getMuestras() {
-		// TODO Auto-generated method stub
-		return null;
+		return muestras;
 	}
-
 	public List<ZonaDeCobertura> getZonasDeCobertura() {
-		// TODO Auto-generated method stub
-		return null;
+		return zonasDeCobertura;
+	}
+	public List<Organizacion> getOrganizaciones() {
+		return organizaciones;
+	}
+	public List<Persona> getUsuarios() {
+		return usuarios;
 	}
 	
+	
+	//setters
+	protected void setMuestras(List<Muestra> muestras) {
+		this.muestras = muestras;
+	}
+	protected void setZonasDeCobertura(List<ZonaDeCobertura> zonasDeCobertura) {
+		this.zonasDeCobertura = zonasDeCobertura;
+	}
+	protected void setOrganizaciones(List<Organizacion> organizaciones) {
+		this.organizaciones = organizaciones;
+	}
+	protected void setUsuarios(List<Persona> usuarios) {
+		this.usuarios = usuarios;
+	}
+	
+	
+	public AplicacionWeb() {
+		super();
+		this.setMuestras(new ArrayList<Muestra>());
+		this.setOrganizaciones(new ArrayList<Organizacion>());
+		this.setUsuarios(new ArrayList<Persona>());
+		this.setZonasDeCobertura(new ArrayList<ZonaDeCobertura>());
+	}
+	
+	public void addMuestra(Muestra muestra) {
+		/**
+		 * Agrega muestra y avisa a las zonas de cobertura que se cargó una nueva muestra
+		 */
+		this.getMuestras().add(muestra);
+		this.avisoMuestraZonas(muestra, TipoAvisoZona.NUEVA_MUESTRA);
+	}
+	
+
+	public void avisoMuestraZonas(Muestra muestra, TipoAvisoZona tipoAviso) {
+		/**
+		 * Dispara la notificacion de aviso a las zonas 
+		 */
+		this.getZonasDeCobertura()
+				.forEach(zona -> zona.notificar(muestra, tipoAviso));
+	}
+	
+	public void addUsuario(Persona persona) {
+		this.getUsuarios().add(persona);
+	}
+	
+	public void addZonaDeCobertura(ZonaDeCobertura zona) {
+		this.getZonasDeCobertura().add(zona);
+	}
+	
+	public void addOrganizacion(Organizacion organizacion1) {
+		this.getOrganizaciones().add(organizacion1);
+	}
 	public static void agregarOpinion(Opinion opinion) {
 		opiniones.add(opinion);
 		
 	}
-
-	public static void agregarMuestra(Muestra muestra) {
-		muestras.add(muestra);
-		
-	}
 	
-	
-	public ArrayList<Opinion> getOpiniones() {
+	public ArrayList<Opinion> getOpiniones(){
 		return opiniones;
 	}
-	
-	public void registrarUsuario(String nombre, EstadoUsuario estado) {
-		Usuario usuario = new Usuario(nombre, estado);
-		usuarios.add(usuario);
-		
+	public static void agregarMuestra(Muestra muestra) {
+		// TODO Auto-generated method stub
+		muestras.add(muestra);
 	}
-	
-
-
-
-
+	 	
 }

@@ -9,16 +9,16 @@ public class UExpertoSiempre implements EstadoUsuario  {
 
 	@Override
 	public void opinar(ClasificacionMuestra clasificacion) {
-		if (puedeOpinar()) {
-			AplicacionWeb.agregarOpinion(new Opinion(usuario, muestra, this, clasificacion));  
+		if (!puedeOpinar()) {
+			 usuario.getAp().agregarOpinion(new Opinion(usuario, muestra, clasificacion));  
 		}
 		
 	}
 	
 	
-
-	private boolean puedeOpinar() {
-		return true;
+	@Override
+	public boolean puedeOpinar() {
+		return muestra.estaVerificada();
 	}
 
 
