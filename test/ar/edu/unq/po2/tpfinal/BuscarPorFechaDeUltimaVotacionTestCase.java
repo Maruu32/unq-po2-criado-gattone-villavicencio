@@ -37,6 +37,7 @@ class BuscarPorFechaDeUltimaVotacionTestCase {
 		when(muestra0.getUltimaFechaOpinion()).thenReturn(LocalDate.parse("2020-06-09")); //TODO: implementar en Muestra
 		when(muestra1.getUltimaFechaOpinion()).thenReturn(LocalDate.parse("2020-06-23"));
 		when(muestra2.getUltimaFechaOpinion()).thenReturn(LocalDate.parse("2020-07-03"));
+
 		
 	}
 
@@ -55,6 +56,7 @@ class BuscarPorFechaDeUltimaVotacionTestCase {
 		//Verify
 		assertEquals(true, resultadoBusqueda.containsAll(resultadoEsperado));
 		assertEquals(1, resultadoBusqueda.size());
+
 		verify(muestra0, times(1)).getUltimaFechaOpinion();
 		verify(muestra1, times(1)).getUltimaFechaOpinion();
 		verify(muestra2, times(1)).getUltimaFechaOpinion();

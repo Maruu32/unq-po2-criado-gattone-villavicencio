@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AplicacionWeb {
-	List<Muestra> muestras;
+	static List<Muestra> muestras;
 	List<ZonaDeCobertura> zonasDeCobertura;
 	List<Organizacion> organizaciones;
-	List<Persona> usuarios;
+	List<Usuario> usuarios;
+	List<Opinion> opiniones;
+
 	
 	/**
 	 * @author Leonardo Criado
@@ -28,7 +30,8 @@ public class AplicacionWeb {
 	public List<Organizacion> getOrganizaciones() {
 		return organizaciones;
 	}
-	public List<Persona> getUsuarios() {
+	public List<Usuario> getUsuarios() {
+
 		return usuarios;
 	}
 	
@@ -43,7 +46,9 @@ public class AplicacionWeb {
 	protected void setOrganizaciones(List<Organizacion> organizaciones) {
 		this.organizaciones = organizaciones;
 	}
-	protected void setUsuarios(List<Persona> usuarios) {
+
+	protected void setUsuarios(List<Usuario> usuarios) {
+
 		this.usuarios = usuarios;
 	}
 	
@@ -52,17 +57,18 @@ public class AplicacionWeb {
 		super();
 		this.setMuestras(new ArrayList<Muestra>());
 		this.setOrganizaciones(new ArrayList<Organizacion>());
-		this.setUsuarios(new ArrayList<Persona>());
+		this.setUsuarios(new ArrayList<Usuario>());
 		this.setZonasDeCobertura(new ArrayList<ZonaDeCobertura>());
 	}
 	
 	public void addMuestra(Muestra muestra) {
 		/**
-		 * Agrega muestra y avisa a las zonas de cobertura que se cargó una nueva muestra
+		 * Agrega muestra y avisa a las zonas de cobertura que se cargÃ³ una nueva muestra
 		 */
 		this.getMuestras().add(muestra);
 		this.avisoMuestraZonas(muestra, TipoAvisoZona.NUEVA_MUESTRA);
 	}
+
 	
 
 	public void avisoMuestraZonas(Muestra muestra, TipoAvisoZona tipoAviso) {
@@ -73,7 +79,7 @@ public class AplicacionWeb {
 				.forEach(zona -> zona.notificar(muestra, tipoAviso));
 	}
 	
-	public void addUsuario(Persona persona) {
+	public void addUsuario(Usuario persona) {
 		this.getUsuarios().add(persona);
 	}
 	
@@ -83,8 +89,23 @@ public class AplicacionWeb {
 	
 	public void addOrganizacion(Organizacion organizacion1) {
 		this.getOrganizaciones().add(organizacion1);
-	}	
-	 
+	}
+	public void agregarOpinion(Opinion opinion) {
+		opiniones.add(opinion); 
+		
+	}
 	
-
+	public List<Opinion> getOpiniones(){
+		return opiniones; 
+	}
+	public static void agregarMuestra(Muestra muestra) {
+		// TODO Auto-generated method stub
+		muestras.add(muestra); 
+	}
+	
+	public void registarUsuario(String _nombre,EstadoUsuario estado) {
+		addUsuario(new Usuario(_nombre, estado)); 
+		
+	}
+	 	
 }

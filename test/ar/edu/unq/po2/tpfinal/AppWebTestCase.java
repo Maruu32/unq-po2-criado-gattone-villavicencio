@@ -13,7 +13,8 @@ class AppWebTestCase {
 	
 	AplicacionWeb app;			//SUT
 	Muestra muestra1; 			//DOC
-	Persona persona1; 			//DOC
+	Usuario persona1; 			//DOC
+
 	ZonaDeCobertura zona1; 		//DOC
 	ZonaDeCobertura zona2; 		//DOC
 	ZonaDeCobertura zona3; 		//DOC
@@ -22,7 +23,7 @@ class AppWebTestCase {
 	@BeforeEach
 	void setUp() throws Exception {
 		muestra1 = mock(Muestra.class);
-		persona1 = mock(Persona.class);
+		persona1 = mock(Usuario.class);
 		zona1 = mock(ZonaDeCobertura.class);
 		zona2 = mock(ZonaDeCobertura.class);
 		zona3 = mock(ZonaDeCobertura.class);

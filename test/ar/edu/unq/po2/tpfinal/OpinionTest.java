@@ -3,19 +3,25 @@ package ar.edu.unq.po2.tpfinal;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
+
+import java.util.ArrayList;
+
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-class OpinionTest {
+
+class OpinionTest { 
+
 
 	@Test
 	void testOpinion_set_sampleCase() {
 		Usuario Usuario = Mockito.mock(Usuario.class);
 		ClasificacionMuestra aCase = Mockito.mock(ClasificacionMuestra.class);
 		
-		Opinion SUT = new Opinion(Usuario, aCase);
+		Opinion SUT = new Opinion(Usuario, null, aCase);
+
 		
 		assertEquals(aCase, SUT.getTipoMuestra());
 		
@@ -26,7 +32,9 @@ class OpinionTest {
 		Usuario Usuario = Mockito.mock(Usuario.class);
 		ClasificacionMuestra aCase = Mockito.mock(ClasificacionMuestra.class);
 		
-		Opinion SUT = new Opinion(Usuario, aCase);
+
+		Opinion SUT = new Opinion(Usuario, null, aCase);
+
 		
 		assertEquals(Usuario, SUT.getUsuario());
 		
@@ -37,13 +45,15 @@ class OpinionTest {
 		Usuario Usuario = Mockito.mock(Usuario.class);
 		ClasificacionMuestra aCase = Mockito.mock(ClasificacionMuestra.class);
 		
-		LocalDate beforeCreation = LocalDate.now();
-		Opinion SUT = new Opinion(Usuario, aCase);
-		LocalDate afterCreation = LocalDate.now();
+
+		ArrayList beforeCreation = new ArrayList();
+		Opinion SUT = new Opinion(Usuario, null, aCase);
+		ArrayList afterCreation = new ArrayList();
 		LocalDate result = SUT.getFechaCreacion();
 		
-		assertFalse(beforeCreation.isAfter(result));
-		assertFalse(afterCreation.isBefore(result));
+		assertFalse(beforeCreation.after(result));
+		assertFalse(afterCreation.before(result));
+
 		
 		
 	}

@@ -7,6 +7,7 @@ public class ValidacionMuestraExperto implements MuestraState{
 	@Override
 	public ClasificacionMuestra getMuestraValidadaActual(Muestra m) {
 		return m.getTipoGanadorActual(m.getOpinionesExpertos());
+
 	}
 	
 	@Override
@@ -23,9 +24,11 @@ public class ValidacionMuestraExperto implements MuestraState{
 	public Boolean esMuestraVerificada(Muestra m) {
 		return EspecieNoDefinida.UNDEFINED != m.getMuestraValidadaActual() && m.getOpinionesExpertos().size() == 2;
 	}
+
 	@Override
 	public LocalDate getUltimaOpinion(Muestra aSample) {
 		List <Opinion> reviews = aSample.getOpinionesExpertos();
 		return reviews.get(reviews.size() - 1).getFechaCreacion();
 	}
+
 }

@@ -24,8 +24,7 @@ public class BuscarPorFechaDeUltimaVotacion extends BuscarPorFecha {
 		OperadorRelacionalFechas operador = this.getOperadorRelacional();
 		return (HashSet<Muestra>) muestrasSet
 				.stream()
-				.filter(muestra -> operador.evaluar(muestra.getUltimaFechaOpinion(), this.getFechaBuscada()))
-				.collect(Collectors.toSet());
-	}
+				.filter(muestra -> operador.evaluar(muestra.getFechaUltimaVotacion(), this.getFechaBuscada()))
+
 
 }

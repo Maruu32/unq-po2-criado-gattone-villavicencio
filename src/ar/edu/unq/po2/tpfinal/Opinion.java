@@ -1,25 +1,29 @@
 package ar.edu.unq.po2.tpfinal;
 
 import java.time.LocalDate;
-import java.util.Date;
-
 
 public class Opinion {
-	private LocalDate fechaCreacion = LocalDate.now();
-	private Usuario usr;
+	private Muestra muestra;
+	private LocalDate fechaCreacion;
+	private Usuario usuario; 
 	private ClasificacionMuestra tipo;
+	private EstadoUsuario eUsuario;
 	
-	public Opinion(Usuario usr, ClasificacionMuestra tipo) {
-		this.setUsuario(usr);
-		this.setOpinion(tipo);
+	public Opinion(Usuario usr, Muestra m, ClasificacionMuestra _tipo) {
+			usuario = usr;
+			muestra = m;
+			tipo = _tipo;
+			eUsuario = usuario.getEstadoUsuario();
+			fechaCreacion = LocalDate.now();
 	}
 	
 	private void setUsuario(Usuario usr) {
-		this.usr = usr;
+		this.usuario = usr;
 	}
 	
 	public Usuario getUsuario() {
-		return this.usr;
+		return this.usuario;
+
 	}
 	
 	private void setOpinion(ClasificacionMuestra t) {
@@ -29,8 +33,16 @@ public class Opinion {
 	public ClasificacionMuestra getTipoMuestra() {
 		return this.tipo;
 	}
-	
+
 	public LocalDate getFechaCreacion() {
 		return this.fechaCreacion;
 	}
-}
+
+	public Muestra getMuestra() {
+		return muestra;
+	}
+
+	public EstadoUsuario geteUsuario() {
+		return eUsuario;
+	}
+
