@@ -23,7 +23,7 @@ class MuestraTest {
 			Usuario aUsuario = Mockito.mock(Usuario.class);
 			Mockito.when(aOpinion.getUsuario()).thenReturn(aUsuario);
 			
-			Muestra SUT = new Muestra(aUbicacion, aPhoto, aOpinion);
+			Muestra SUT = new Muestra(null, aUbicacion, aPhoto, aOpinion);
 			
 			assertEquals(aPhoto, SUT.getFoto());
 		}
@@ -37,7 +37,7 @@ class MuestraTest {
 			Mockito.when(aOpinion.getTipoMuestra()).thenReturn(aVichuca);
 			Usuario aUsuario = Mockito.mock(Usuario.class);
 			Mockito.when(aOpinion.getUsuario()).thenReturn(aUsuario);
-			Muestra SUT = new Muestra(aUbicacion, aPhoto, aOpinion);
+			Muestra SUT = new Muestra(null, aUbicacion, aPhoto, aOpinion);
 			
 			assertFalse(SUT.estaVerificada());
 		}
@@ -53,7 +53,7 @@ class MuestraTest {
 			Mockito.when(aOpinion.getUsuario()).thenReturn(aUsuario);
 
 			
-			Muestra SUT = new Muestra(aUbicacion, aPhoto, aOpinion);
+			Muestra SUT = new Muestra(null, aUbicacion, aPhoto, aOpinion);
 			
 			assertEquals(aUbicacion, SUT.getUbicacion());
 		}
@@ -77,7 +77,7 @@ class MuestraTest {
 			Mockito.when(aOpinion5.getTipoMuestra()).thenReturn(NoEsVinchuca.NINGUNA);
 			Opinion aOpinion6 = Mockito.mock(Opinion.class);
 			Mockito.when(aOpinion6.getTipoMuestra()).thenReturn(NoEsVinchuca.IMAGEN_POCO_CLARA);
-			Muestra SUT = new Muestra(aUbicacion, aPhoto, aOpinion);
+			Muestra SUT = new Muestra(null, aUbicacion, aPhoto, aOpinion);
 			List<Opinion> Opinions = new ArrayList<Opinion>();
 			Opinions.add(aOpinion);
 			Opinions.add(aOpinion2);
@@ -111,7 +111,7 @@ class MuestraTest {
 			Mockito.when(aOpinion6.getTipoMuestra()).thenReturn(NoEsVinchuca.IMAGEN_POCO_CLARA);
 			Opinion aOpinion7 = Mockito.mock(Opinion.class);
 			Mockito.when(aOpinion7.getTipoMuestra()).thenReturn(EspecieVinchuca.VICHUCA_GUASAYANA);
-			Muestra SUT = new Muestra(aUbicacion, aPhoto, aOpinion);
+			Muestra SUT = new Muestra(null, aUbicacion, aPhoto, aOpinion);
 			List<Opinion> Opinions = new ArrayList<Opinion>();
 			Opinions.add(aOpinion);
 			Opinions.add(aOpinion2);
@@ -134,7 +134,7 @@ class MuestraTest {
 			Ubicacion aUbicacion = Mockito.mock(Ubicacion.class);
 			Usuario aUsuario = Mockito.mock(Usuario.class);
 			Mockito.when(aOpinion.getUsuario()).thenReturn(aUsuario);
-			Muestra SUT = new Muestra(aUbicacion, aPhoto, aOpinion);
+			Muestra SUT = new Muestra(null, aUbicacion, aPhoto, aOpinion);
 			MuestraState aState = Mockito.mock(MuestraState.class);
 			SUT.setMuestraState(aState);
 			Mockito.when(aState.usrExpertoPuedeOpinar(SUT)).thenReturn(true);
@@ -152,7 +152,7 @@ class MuestraTest {
 			Ubicacion aUbicacion = Mockito.mock(Ubicacion.class);
 			Usuario aUsuario = Mockito.mock(Usuario.class);
 			Mockito.when(aOpinion.getUsuario()).thenReturn(aUsuario);
-			Muestra SUT = new Muestra(aUbicacion, aPhoto, aOpinion);
+			Muestra SUT = new Muestra(null, aUbicacion, aPhoto, aOpinion);
 			MuestraState aState = Mockito.mock(MuestraState.class);
 			SUT.setMuestraState(aState);
 			Mockito.when(aState.usrExpertoPuedeOpinar(SUT)).thenReturn(false);
@@ -170,7 +170,7 @@ class MuestraTest {
 			Ubicacion aUbicacion = Mockito.mock(Ubicacion.class);
 			Usuario aUsuario = Mockito.mock(Usuario.class);
 			Mockito.when(aOpinion.getUsuario()).thenReturn(aUsuario);
-			Muestra SUT = new Muestra(aUbicacion, aPhoto, aOpinion);
+			Muestra SUT = new Muestra(null, aUbicacion, aPhoto, aOpinion);
 			MuestraState aState = Mockito.mock(MuestraState.class);
 			SUT.setMuestraState(aState);
 			Mockito.when(aState.usrBasicoPuedeOpinar(SUT)).thenReturn(true);
@@ -188,7 +188,7 @@ class MuestraTest {
 			Ubicacion aUbicacion = Mockito.mock(Ubicacion.class);
 			Usuario aUsuario = Mockito.mock(Usuario.class);
 			Mockito.when(aOpinion.getUsuario()).thenReturn(aUsuario);
-			Muestra SUT = new Muestra(aUbicacion, aPhoto, aOpinion);
+			Muestra SUT = new Muestra(null, aUbicacion, aPhoto, aOpinion);
 			MuestraState aState = Mockito.mock(MuestraState.class);
 			SUT.setMuestraState(aState);
 			Mockito.when(aState.usrBasicoPuedeOpinar(SUT)).thenReturn(false);

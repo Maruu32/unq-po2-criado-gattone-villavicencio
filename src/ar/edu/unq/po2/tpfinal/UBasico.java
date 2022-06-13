@@ -19,10 +19,10 @@ public class UBasico implements EstadoUsuario  {
 	
 
 	@Override
-	public void opinar(ClasificacionMuestra clasificacion) {
+	public void opinar(ClasificacionMuestra clasificacion, Usuario u, Muestra muestra) {
 		//crea una opinion si puede opinar en la Muestra
 		if (puedeOpinar()) {
-			 usuario.getAp().agregarOpinion(new Opinion(usuario, muestra, clasificacion));
+			 usuario.getAp().agregarOpinion(new Opinion(usuario, muestra, clasificacion)); 
 			 subirCategoria(usuario);	
 		}
 		
@@ -58,7 +58,7 @@ public class UBasico implements EstadoUsuario  {
 	public long contarDias(LocalDate inicio, LocalDate fin) {
 		//me devuelve los que se llevan el incio y el fin
 		 long dias = ChronoUnit.DAYS.between(inicio,fin);
-		 return dias;
+		 return dias; 
 	}
 
 

@@ -34,8 +34,8 @@ public class Usuario {
 		AplicacionWeb.agregarMuestra(new Muestra(this, ubicacion, foto, aOpinion ));
 	}
 
-	public void opinar(ClasificacionMuestra clasificacion) {
-		estadoUsuario.opinar(clasificacion);
+	public void opinar(ClasificacionMuestra clasificacion, Muestra muestra) {
+		estadoUsuario.opinar(clasificacion, this, muestra);
 		
 	}
 	

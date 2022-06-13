@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class UExperto implements EstadoUsuario  {
 
-	private Muestra muestra;
+	private Muestra muestra; 
 	private Usuario usuario;
 	
 	
@@ -13,12 +13,12 @@ public class UExperto implements EstadoUsuario  {
 		muestra = _muestra;
 	}
 
-	@Override
-	public void opinar(ClasificacionMuestra clasificacion) {
+	@Override 
+	public void opinar(ClasificacionMuestra clasificacion, Usuario u, Muestra muestra) { 
 		//si puede opinar crea un opinion 
 	  if(!puedeOpinar()){
 		  usuario.getAp().agregarOpinion(new Opinion(usuario, muestra, clasificacion));
-	  }
+	  }  
 	}
 	@Override
 	public boolean puedeOpinar() {

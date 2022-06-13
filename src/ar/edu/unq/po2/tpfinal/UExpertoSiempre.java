@@ -14,7 +14,7 @@ public class UExpertoSiempre implements EstadoUsuario  {
 	}
 
 	@Override
-	public void opinar(ClasificacionMuestra clasificacion) {
+	public void opinar(ClasificacionMuestra clasificacion, Usuario u, Muestra muestra) { 
 		if (!puedeOpinar()) {
 			 usuario.getAp().agregarOpinion(new Opinion(usuario, muestra, clasificacion));  
 		}

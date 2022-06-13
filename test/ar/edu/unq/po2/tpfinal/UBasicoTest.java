@@ -58,25 +58,6 @@ class UBasicoTest {
 		Opinion opi19 = new Opinion(usr, muestra, null);
 		Opinion opi20 = new Opinion(usr, muestra, null);
 		
-		ap.agregarOpinion(new Opinion(usr, muestra10, null)); 
-		ap.agregarOpinion(opi5);
-		ap.agregarOpinion(opi6);
-		ap.agregarOpinion(opi7);
-		ap.agregarOpinion(opi8);
-		ap.agregarOpinion(opi9);
-		ap.agregarOpinion(opi10);
-		ap.agregarOpinion(opi11);
-		ap.agregarOpinion(opi12);
-		ap.agregarOpinion(opi13);
-		ap.agregarOpinion(opi14);
-		ap.agregarOpinion(opi15);
-		ap.agregarOpinion(opi16);
-		ap.agregarOpinion(opi17);
-		ap.agregarOpinion(opi18);
-		ap.agregarOpinion(opi19);
-		ap.agregarOpinion(opi20);
-
-		
 
 		
 		
@@ -95,24 +76,27 @@ class UBasicoTest {
 	@Test
 	void test_realizoOpinion() {
 		
-		assertTrue(basico.realizoVeinteOpiniones());  
+		assertFalse(basico.realizoVeinteOpiniones()); 
 	}
 	
 	@Test
 	void test_puedeopinar() {
 		
-		assertTrue(basico.puedeOpinar());
+		
+		assertTrue(basico.puedeOpinar()); 
+		
+		
 	}
 	
 	@Test
-	void test_opinar() {
-		Usuario Usuario = Mockito.mock(Usuario.class);
-		UBasico basic = Mockito.mock(UBasico.class);
-		Muestra mue = Mockito.mock(Muestra.class); 
+	void test_contar_dias() {
+		
+		LocalDate inicio = LocalDate.of(2022, 1, 1);
+		LocalDate fin = LocalDate.of(2023, 1, 1);
 		
 		
 		
-		assertEquals(0,ap.getOpiniones().size());
+		assertEquals(365,basico.contarDias(inicio, fin)); 
 	}
 
 }

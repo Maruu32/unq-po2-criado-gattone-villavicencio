@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Muestra {
-	private BufferedImage foto;
+	private BufferedImage foto; 
 	private Ubicacion ubicacion;
 	private Usuario usuario;
 	private LocalDate fechaCreacion = LocalDate.now();
@@ -18,7 +18,7 @@ public class Muestra {
 	
 	private MuestraState validacionMuestra = new ValidacionMuestraBasico();
 			
-	public Muestra(Ubicacion u, BufferedImage foto, Opinion aOpinion) {
+	public Muestra(Usuario usuario, Ubicacion u, BufferedImage foto, Opinion aOpinion) {
 		this.setUbicacion(u); 
 		this.setFoto(foto);
 		this.setOpinion(aOpinion);
