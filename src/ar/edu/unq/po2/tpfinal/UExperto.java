@@ -8,8 +8,9 @@ public class UExperto implements EstadoUsuario  {
 	private Usuario usuario;
 	
 	
-	public UExperto(Usuario _usuario) { 
+	public UExperto(Usuario _usuario, Muestra _muestra) { 
 		usuario = _usuario; 
+		muestra = _muestra;
 	}
 
 	@Override

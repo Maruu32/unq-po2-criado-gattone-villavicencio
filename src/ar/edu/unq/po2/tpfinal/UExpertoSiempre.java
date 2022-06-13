@@ -6,6 +6,12 @@ public class UExpertoSiempre implements EstadoUsuario  {
 	
 	private Muestra muestra;
 	private Usuario usuario;
+	
+	public UExpertoSiempre(Usuario _usuario, Muestra _muestra) { 
+		usuario = _usuario;
+		muestra= _muestra;
+		
+	}
 
 	@Override
 	public void opinar(ClasificacionMuestra clasificacion) {

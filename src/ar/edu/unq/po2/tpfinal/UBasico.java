@@ -6,13 +6,14 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-public class UBasico implements EstadoUsuario  {
+public class UBasico implements EstadoUsuario  { 
 	
 	private Muestra muestra;
 	private Usuario usuario;
 	
-	public UBasico(Usuario _usuario) { 
+	public UBasico(Usuario _usuario, Muestra _muestra) { 
 		usuario = _usuario;
+		muestra= _muestra;
 		
 	}
 	
@@ -30,7 +31,7 @@ public class UBasico implements EstadoUsuario  {
 	private void subirCategoria(Usuario usuario) {
 		//Si cumple con la cantidad de muestras y opiniones sube de categoria
 		if(relizoDiezMuestras() && realizoVeinteOpiniones()){
-			usuario.setEstadoUsuario(new UExperto(usuario));
+			usuario.setEstadoUsuario(new UExperto(usuario,muestra));
 		}
 	}
 
