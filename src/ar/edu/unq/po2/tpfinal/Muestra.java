@@ -22,7 +22,7 @@ public class Muestra {
 		this.setUbicacion(u); 
 		this.setFoto(foto);
 		this.setOpinion(aOpinion);
-	}
+	} 
 
 	public ClasificacionMuestra getTipo() {
 		return this.getOpinion().getTipoMuestra();

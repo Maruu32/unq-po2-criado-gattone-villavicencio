@@ -26,7 +26,7 @@ public class Usuario {
 	public Usuario(String _nombre,EstadoUsuario estado){
 		nombre = _nombre;
 		estadoUsuario = estado;
-		misMuestras = new ArrayList<Muestra>();
+		misMuestras = new ArrayList<Muestra>(); 
 		misOpiniones = new ArrayList<Opinion>();
 	}
 	
@@ -61,7 +61,7 @@ public class Usuario {
 		return ap;
 	}
 
-
+}
 
 	
 	
