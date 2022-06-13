@@ -14,6 +14,7 @@ class AppWebTestCase {
 	AplicacionWeb app;			//SUT
 	Muestra muestra1; 			//DOC
 	Usuario persona1; 			//DOC
+
 	ZonaDeCobertura zona1; 		//DOC
 	ZonaDeCobertura zona2; 		//DOC
 	ZonaDeCobertura zona3; 		//DOC

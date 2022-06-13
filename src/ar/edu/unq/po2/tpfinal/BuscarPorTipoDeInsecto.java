@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 public class BuscarPorTipoDeInsecto implements BuscarPor {
 	
 	protected EspecieVinchuca especieBuscada; 
+
 	
 	/**
 	 * @author Lenardo Criado

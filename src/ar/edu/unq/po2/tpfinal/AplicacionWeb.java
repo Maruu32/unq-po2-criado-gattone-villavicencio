@@ -9,6 +9,7 @@ public class AplicacionWeb {
 	List<Organizacion> organizaciones;
 	List<Usuario> usuarios;
 	List<Opinion> opiniones;
+
 	
 	/**
 	 * @author Leonardo Criado
@@ -30,6 +31,7 @@ public class AplicacionWeb {
 		return organizaciones;
 	}
 	public List<Usuario> getUsuarios() {
+
 		return usuarios;
 	}
 	
@@ -44,7 +46,9 @@ public class AplicacionWeb {
 	protected void setOrganizaciones(List<Organizacion> organizaciones) {
 		this.organizaciones = organizaciones;
 	}
+
 	protected void setUsuarios(List<Usuario> usuarios) {
+
 		this.usuarios = usuarios;
 	}
 	
@@ -59,11 +63,12 @@ public class AplicacionWeb {
 	
 	public void addMuestra(Muestra muestra) {
 		/**
-		 * Agrega muestra y avisa a las zonas de cobertura que se cargó una nueva muestra
+		 * Agrega muestra y avisa a las zonas de cobertura que se cargÃ³ una nueva muestra
 		 */
 		this.getMuestras().add(muestra);
 		this.avisoMuestraZonas(muestra, TipoAvisoZona.NUEVA_MUESTRA);
 	}
+
 	
 
 	public void avisoMuestraZonas(Muestra muestra, TipoAvisoZona tipoAviso) {

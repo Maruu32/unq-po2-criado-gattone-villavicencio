@@ -1,5 +1,6 @@
 package ar.edu.unq.po2.tpfinal;
 
+
 import java.awt.image.BufferedImage;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -65,4 +66,4 @@ public class Usuario {
 	
 	
 
-}
+

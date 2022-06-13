@@ -2,7 +2,6 @@ package ar.edu.unq.po2.tpfinal;
 
 import java.time.LocalDate;
 
-
 public class Opinion {
 	private Muestra muestra;
 	private LocalDate fechaCreacion;
@@ -24,6 +23,7 @@ public class Opinion {
 	
 	public Usuario getUsuario() {
 		return this.usuario;
+
 	}
 	
 	private void setOpinion(ClasificacionMuestra t) {
@@ -33,6 +33,7 @@ public class Opinion {
 	public ClasificacionMuestra getTipoMuestra() {
 		return this.tipo;
 	}
+
 	public LocalDate getFechaCreacion() {
 		return this.fechaCreacion;
 	}
@@ -44,4 +45,4 @@ public class Opinion {
 	public EstadoUsuario geteUsuario() {
 		return eUsuario;
 	}
-}
+

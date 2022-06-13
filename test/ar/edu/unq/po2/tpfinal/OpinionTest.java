@@ -3,13 +3,17 @@ package ar.edu.unq.po2.tpfinal;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
+
 import java.util.ArrayList;
+
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+
 class OpinionTest { 
+
 
 	@Test
 	void testOpinion_set_sampleCase() {
@@ -17,6 +21,7 @@ class OpinionTest {
 		ClasificacionMuestra aCase = Mockito.mock(ClasificacionMuestra.class);
 		
 		Opinion SUT = new Opinion(Usuario, null, aCase);
+
 		
 		assertEquals(aCase, SUT.getTipoMuestra());
 		
@@ -27,7 +32,9 @@ class OpinionTest {
 		Usuario Usuario = Mockito.mock(Usuario.class);
 		ClasificacionMuestra aCase = Mockito.mock(ClasificacionMuestra.class);
 		
+
 		Opinion SUT = new Opinion(Usuario, null, aCase);
+
 		
 		assertEquals(Usuario, SUT.getUsuario());
 		
@@ -38,6 +45,7 @@ class OpinionTest {
 		Usuario Usuario = Mockito.mock(Usuario.class);
 		ClasificacionMuestra aCase = Mockito.mock(ClasificacionMuestra.class);
 		
+
 		ArrayList beforeCreation = new ArrayList();
 		Opinion SUT = new Opinion(Usuario, null, aCase);
 		ArrayList afterCreation = new ArrayList();
@@ -45,6 +53,7 @@ class OpinionTest {
 		
 		assertFalse(beforeCreation.after(result));
 		assertFalse(afterCreation.before(result));
+
 		
 		
 	}
