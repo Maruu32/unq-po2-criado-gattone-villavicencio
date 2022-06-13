@@ -19,7 +19,7 @@ class ValidacionMuestraBasicaTest {
 		Opinion Opinion1 = Mockito.mock(Opinion.class);
 		Opinion Opinion2 = Mockito.mock(Opinion.class);
 		Opinion Opinion3 = Mockito.mock(Opinion.class);
-		LocalDate aDate = Mockito.mock(LocalDate.class);
+		LocalDate aDate = LocalDate.now();
 		List <Opinion> reviews = new ArrayList <Opinion>();
 		reviews.add(Opinion1);
 		reviews.add(Opinion2);

@@ -24,6 +24,9 @@ public class Muestra {
 		this.setOpinion(aOpinion);
 	}
 
+	public ClasificacionMuestra getTipo() {
+		return this.getOpinion().getTipoMuestra();
+	}
 //Devuelve la clasificacion de muestra que mas opiniones tuvo. 
 	//Devuelve el tipo de muestra(Vinchuca, Chinche o no Definida ) ganadora en las opiniones.
 	public ClasificacionMuestra getTipoGanadorActual(List<Opinion> opiniones) {
