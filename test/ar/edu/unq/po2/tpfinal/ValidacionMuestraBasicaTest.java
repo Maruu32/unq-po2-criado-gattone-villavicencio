@@ -2,6 +2,7 @@ package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +19,7 @@ class ValidacionMuestraBasicaTest {
 		Opinion Opinion1 = Mockito.mock(Opinion.class);
 		Opinion Opinion2 = Mockito.mock(Opinion.class);
 		Opinion Opinion3 = Mockito.mock(Opinion.class);
-		Date aDate = Mockito.mock(Date.class);
+		LocalDate aDate = Mockito.mock(LocalDate.class);
 		List <Opinion> reviews = new ArrayList <Opinion>();
 		reviews.add(Opinion1);
 		reviews.add(Opinion2);

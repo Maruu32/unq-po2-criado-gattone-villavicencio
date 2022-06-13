@@ -1,6 +1,9 @@
 package ar.edu.unq.po2.tpfinal;
 
-public class ValidacionMuestraBasica implements ValidacionMuestra{
+import java.time.LocalDate;
+import java.util.List;
+
+public class ValidacionMuestraBasico implements MuestraState{
 	
 	@Override
 	public ClasificacionMuestra getMuestraValidadaActual(Muestra m) {
@@ -20,5 +23,11 @@ public class ValidacionMuestraBasica implements ValidacionMuestra{
 	@Override
 	public Boolean esMuestraVerificada(Muestra aMuestra){
 		return false;
+	}
+	
+	@Override
+	public LocalDate getUltimaOpinion(Muestra aSample) {
+		List <Opinion> reviews = aSample.getOpinionesBasicos();
+		return reviews.get(reviews.size() - 1).getFechaCreacion();
 	}
 }

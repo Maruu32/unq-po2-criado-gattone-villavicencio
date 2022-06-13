@@ -1,10 +1,7 @@
 package ar.edu.unq.po2.tpfinal;
-
-
 import java.awt.image.BufferedImage;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,36 +11,19 @@ public class Muestra {
 	private Ubicacion ubicacion;
 	private Usuario usuario;
 	private LocalDate fechaCreacion = LocalDate.now();
+	private Opinion opinion;
+	
 	private List <Opinion> opinionesExp = new ArrayList <>();
 	private List <Opinion> opinionesBas = new ArrayList <>();
 	
-	private ValidacionMuestra validacionMuestra = new ValidacionMuestraBasica();
-	
-	private static List<Muestra> registradas = new ArrayList<>();
-		
-	public Muestra( Ubicacion u, BufferedImage foto, Opinion aOpinion) {
+	private MuestraState validacionMuestra = new ValidacionMuestraBasico();
+			
+	public Muestra(Ubicacion u, BufferedImage foto, Opinion aOpinion) {
 		this.setUbicacion(u); 
 		this.setFoto(foto);
-		 
-		/**
-		 * @author LeO
-		 * 
-		 * no se está guardando la primer opinion
-		 * 
-		 */	
-		
+		this.setOpinion(aOpinion);
 	}
-	
-	private void registrar() {
-		registradas.add(this);
-		/**
-		 * @author LeO
-		 * 
-		 * Creo que el registrar está de mas ya que la lista de muestras se lleva desde la AplicacionWeb
-		 * 
-		 */
-	}
-	
+
 //Devuelve la clasificacion de muestra que mas opiniones tuvo. 
 	//Devuelve el tipo de muestra(Vinchuca, Chinche o no Definida ) ganadora en las opiniones.
 	public ClasificacionMuestra getTipoGanadorActual(List<Opinion> opiniones) {
@@ -62,13 +42,6 @@ public class Muestra {
 			//Si ya existe, con get(tipo) traigo el valor para ese tipo de muestra y le sumo uno, sino le asigno 1 
 			cv.put(tipo, cv.containsKey(tipo) ? cv.get(tipo)+1 : 1);
 		}
-		
-		/**@author Lenardo Criado
-		 * 
-		 * estaVerificada()
-		 * 
-		 * TODO: agregar aviso a zonas si la muestra, está validada.
-		 */
 	}
 	
 	//Devuelve el tipo de muestra que mas opiniones tuvo.
@@ -84,63 +57,58 @@ public class Muestra {
 	}
 	
 //Verificacion
-	protected ValidacionMuestra getValidacionMuestra() {
+	public MuestraState getValidacionMuestra() {
 		return this.validacionMuestra;
-	}
-	
-	protected void setValidacionMuestra(ValidacionMuestra v) {
-		this.validacionMuestra = v;
 	}
 	
 	public ClasificacionMuestra getMuestraValidadaActual() {
 		return this.getValidacionMuestra().getMuestraValidadaActual(this);
 	}
 	
-	public List<Opinion> getOpinionesExpertos(){
-		return this.opinionesExp;
-	}
-	
-	public List <Opinion> getOpinionesBasicos() {
-		return this.opinionesBas;
-	}
-	
 	public Boolean estaVerificada() {
 		return this.getValidacionMuestra().esMuestraVerificada(this);
 	}
 	
+	public LocalDate getUltimaFechaOpinion() {
+		return this.getValidacionMuestra().getUltimaOpinion(this);
+	}
+	
+	protected void setMuestraState(MuestraState aSampleState) {
+		this.validacionMuestra = aSampleState;
+	}
+	//Opiniones
+	
+	private Opinion getOpinion(){ return this.opinion;}
+	
+	private void setOpinion(Opinion op){ this.opinion = op; }
+	
+	public List<Opinion> getOpinionesBasicos(){ return this.opinionesBas; }
+	
+	public List<Opinion> getOpinionesExpertos(){ return this.opinionesExp; }
+	
+	public List<Opinion> getOpiniones() {
+		List<Opinion> reviews = new ArrayList<>();
+		reviews.addAll(this.getOpinionesBasicos());
+		reviews.addAll(this.getOpinionesExpertos());
+		return reviews;
+	}
+	
+	//Ubicacion
 	private void setUbicacion(Ubicacion u) { this.ubicacion = u;}
 	
 	public Ubicacion getUbicacion() {
-		// TODO Auto-generated method stub
 		return ubicacion;
 	}
 	
-	private void setFoto(BufferedImage f) {
-		this.foto = f;
-	}
+	//Foto
+	private void setFoto(BufferedImage f) { this.foto = f; }
 	
-	public BufferedImage getFoto() {
-		return this.foto;
-	}
+	public BufferedImage getFoto() { return this.foto; }
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
+	//Usuario
+	public Usuario getUsuario() { return usuario; }
 	
 	public LocalDate getFechaCreacion(){
 		return this.fechaCreacion;
 	}
-
-	public EspecieVinchuca getTipo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public LocalDate getFechaUltimaVotacion() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-
 }

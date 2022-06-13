@@ -1,10 +1,11 @@
 package ar.edu.unq.po2.tpfinal;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
 public class Opinion {
-	private Date fechaCreacion = new Date();
+	private LocalDate fechaCreacion = LocalDate.now();
 	private Usuario usr;
 	private ClasificacionMuestra tipo;
 	
@@ -28,7 +29,8 @@ public class Opinion {
 	public ClasificacionMuestra getTipoMuestra() {
 		return this.tipo;
 	}
-	public Date getFechaCreacion() {
+	
+	public LocalDate getFechaCreacion() {
 		return this.fechaCreacion;
 	}
 }

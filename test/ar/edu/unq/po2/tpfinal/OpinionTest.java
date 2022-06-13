@@ -1,6 +1,8 @@
 package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
@@ -35,13 +37,13 @@ class OpinionTest {
 		Usuario Usuario = Mockito.mock(Usuario.class);
 		ClasificacionMuestra aCase = Mockito.mock(ClasificacionMuestra.class);
 		
-		Date beforeCreation = new Date();
+		LocalDate beforeCreation = LocalDate.now();
 		Opinion SUT = new Opinion(Usuario, aCase);
-		Date afterCreation = new Date();
-		Date result = SUT.getFechaCreacion();
+		LocalDate afterCreation = LocalDate.now();
+		LocalDate result = SUT.getFechaCreacion();
 		
-		assertFalse(beforeCreation.after(result));
-		assertFalse(afterCreation.before(result));
+		assertFalse(beforeCreation.isAfter(result));
+		assertFalse(afterCreation.isBefore(result));
 		
 		
 	}
