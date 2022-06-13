@@ -36,17 +36,17 @@ public class UBasico implements EstadoUsuario  {
 	}
 
 
-	private boolean realizoVeinteOpiniones(){
+	boolean realizoVeinteOpiniones(){
 		ArrayList<Opinion> resultado = new ArrayList<>();
 		usuario.getMisOpiniones().parallelStream().filter(p->contarDias(p.getFechaCreacion(),LocalDate.now())>30).forEach(p -> resultado.add(p));
 		return resultado.size() > 20;
 	}
 
 
-	private boolean relizoDiezMuestras() {
+	boolean relizoDiezMuestras() {
 		ArrayList<Muestra> resultado = new ArrayList<>();
 		usuario.getMisMuestras().parallelStream().filter(p->contarDias(p.getFechaCreacion(),LocalDate.now())>30 ).forEach(p -> resultado.add(p));
-		return resultado.size() > 10;
+		return resultado.size() > 10;  
 	}
 	
 	

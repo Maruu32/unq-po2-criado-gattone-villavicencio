@@ -19,7 +19,7 @@ public class Muestra {
 	
 	private ValidacionMuestra validacionMuestra = new ValidacionMuestraBasica();
 	
-	private static List<Muestra> registradas = new ArrayList<>();
+	private static List<Muestra> registradas = new ArrayList<>(); 
 		
 	public Muestra(Usuario _usuario, Ubicacion u, BufferedImage foto, Opinion aOpinion) {
 		this.setUbicacion(u); 

@@ -8,7 +8,7 @@ public class AplicacionWeb {
 	List<ZonaDeCobertura> zonasDeCobertura;
 	List<Organizacion> organizaciones;
 	List<Usuario> usuarios;
-	static ArrayList<Opinion> opiniones;
+	List<Opinion> opiniones;
 	
 	/**
 	 * @author Leonardo Criado
@@ -85,12 +85,12 @@ public class AplicacionWeb {
 	public void addOrganizacion(Organizacion organizacion1) {
 		this.getOrganizaciones().add(organizacion1);
 	}
-	public static void agregarOpinion(Opinion opinion) {
-		opiniones.add(opinion);
+	public void agregarOpinion(Opinion opinion) {
+		opiniones.add(opinion); 
 		
 	}
 	
-	public ArrayList<Opinion> getOpiniones(){
+	public List<Opinion> getOpiniones(){
 		return opiniones; 
 	}
 	public static void agregarMuestra(Muestra muestra) {
@@ -99,7 +99,7 @@ public class AplicacionWeb {
 	}
 	
 	public void registarUsuario(String _nombre,EstadoUsuario estado) {
-		addUsuario(new Usuario(_nombre, estado));
+		addUsuario(new Usuario(_nombre, estado)); 
 		
 	}
 	 	

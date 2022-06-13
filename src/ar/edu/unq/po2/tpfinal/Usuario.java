@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class Usuario {
 	private String nombre;
-	private EstadoUsuario estadoUsuario;
+	private EstadoUsuario estadoUsuario; 
 	private ArrayList<Muestra> misMuestras;
 	private ArrayList<Opinion> misOpiniones;
 	private AplicacionWeb ap;
