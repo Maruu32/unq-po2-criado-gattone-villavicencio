@@ -252,6 +252,7 @@ class MuestraTest {
 			verify(muestra3, times(1)).getUbicacion();
 			verify(muestra4, times(1)).getUbicacion();
 		}
+		
 	
-	}
+}
 

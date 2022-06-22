@@ -78,6 +78,7 @@ class ZonaDeCoberturaTestCase {
 		List<Muestra> resultado = zonaDeCobertura.muestrasDentroDeZona();
 		
 		//Verify
+		assertEquals("Quilmes",zonaDeCobertura.getNombreZona());
 		assertEquals(2,resultado.size());
 		assertEquals(muestra1,resultado.get(0));
 		assertEquals(muestra2,resultado.get(1));

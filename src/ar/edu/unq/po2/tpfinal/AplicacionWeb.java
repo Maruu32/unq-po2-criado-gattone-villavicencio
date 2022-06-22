@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AplicacionWeb {
-	static List<Muestra> muestras;
+	List<Muestra> muestras;
 	List<ZonaDeCobertura> zonasDeCobertura;
 	List<Organizacion> organizaciones;
 	List<Usuario> usuarios;
@@ -98,10 +98,7 @@ public class AplicacionWeb {
 	public List<Opinion> getOpiniones(){
 		return opiniones; 
 	}
-	public static void agregarMuestra(Muestra muestra) {
-		// TODO Auto-generated method stub
-		muestras.add(muestra); 
-	}
+
 	
 	public void registarUsuario(String _nombre,EstadoUsuario estado) {
 		addUsuario(new Usuario(_nombre, estado)); 
