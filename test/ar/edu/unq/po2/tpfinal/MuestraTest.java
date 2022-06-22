@@ -222,14 +222,9 @@ class MuestraTest {
 			Muestra SUT = new Muestra(null, ubicacion1, aPhoto, aOpinion);
 			
 			// Setup
-			when(ubicacion1.getLatitud()).thenReturn(31.2d);
-			when(ubicacion1.getLongitud()).thenReturn(40.3d);
-			when(ubicacion2.getLatitud()).thenReturn(35d);
-			when(ubicacion2.getLongitud()).thenReturn(45d);
-			when(ubicacion3.getLatitud()).thenReturn(30d);
-			when(ubicacion3.getLongitud()).thenReturn(25d);
-			when(ubicacion4.getLatitud()).thenReturn(5d);
-			when(ubicacion4.getLongitud()).thenReturn(65d);
+			when(ubicacion1.distanciaEnKm(ubicacion2)).thenReturn(1000d);
+			when(ubicacion1.distanciaEnKm(ubicacion3)).thenReturn(500d);
+			when(ubicacion1.distanciaEnKm(ubicacion4)).thenReturn(3500d);
 			//when(muestra1.getUbicacion()).thenReturn(ubicacion1);
 			when(muestra2.getUbicacion()).thenReturn(ubicacion2);
 			when(muestra3.getUbicacion()).thenReturn(ubicacion3);
@@ -249,12 +244,9 @@ class MuestraTest {
 			//Verify
 			assertEquals(muestra2,resultado.get(0));
 			assertEquals(muestra3,resultado.get(1));
-			verify(ubicacion2, times(1)).getLatitud();
-			verify(ubicacion2, times(1)).getLongitud();
-			verify(ubicacion3, times(1)).getLatitud();
-			verify(ubicacion3, times(1)).getLongitud();
-			verify(ubicacion4, times(1)).getLatitud();
-			verify(ubicacion4, times(1)).getLongitud();
+			verify(ubicacion1, times(1)).distanciaEnKm(ubicacion2);
+			verify(ubicacion1, times(1)).distanciaEnKm(ubicacion3);
+			verify(ubicacion1, times(1)).distanciaEnKm(ubicacion4);
 			//verify(muestra1, times(1)).getUbicacion();
 			verify(muestra2, times(1)).getUbicacion();
 			verify(muestra3, times(1)).getUbicacion();
