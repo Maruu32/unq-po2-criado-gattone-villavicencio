@@ -7,7 +7,7 @@ public class Buscador {
 	private AplicacionWeb appWeb;
 	private BuscarPor estrategiaBusqueda;
 	
-	/**@author Lenardo Criado
+	/**@author Leonardo Criado
 	 * 
 	 * Esta clase ejecuta una estrategia de busqueda que utiliza un set de Muestras como parametro.
 	 * 
