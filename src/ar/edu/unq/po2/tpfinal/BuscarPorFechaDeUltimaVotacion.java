@@ -26,7 +26,7 @@ public class BuscarPorFechaDeUltimaVotacion extends BuscarPorFecha {
 				.stream()
 				.filter(muestra -> operador.evaluar(muestra.getUltimaFechaOpinion(), this.getFechaBuscada()))
 				.collect(Collectors.toSet());
-		}
+	}
 
 
 }

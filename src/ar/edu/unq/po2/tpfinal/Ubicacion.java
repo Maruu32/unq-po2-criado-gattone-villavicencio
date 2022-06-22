@@ -66,16 +66,7 @@ public class Ubicacion implements IUbicacion{
 	}
 
 	
-	public List<Muestra> muestasAMenosDe(double distancia, Muestra muestra1, List<Muestra> muestras) {
-		/**
-		 * Retorna una sublista de @param muestras con las muestras a menos de @param distancia en de @param muestra1
-		 */
-		Ubicacion ubicacionMuestra =  muestra1.getUbicacion();
-		return muestras
-				.stream()
-				.filter(muestra -> ubicacionMuestra.distanciaEnKm(muestra.getUbicacion()) < distancia) //Filtrando muestras con ubicación menor a distancia
-				.collect(Collectors.toList());
-	}
+
 	
 	
 	
