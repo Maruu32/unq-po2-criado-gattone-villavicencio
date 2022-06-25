@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.organizacion;
 
 public enum TipoOrganizacion {
 	/**

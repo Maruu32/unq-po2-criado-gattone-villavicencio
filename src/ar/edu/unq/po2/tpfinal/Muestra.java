@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
+
 public class Muestra {
 	private BufferedImage foto; 
 	private Ubicacion ubicacion;

@@ -1,7 +1,10 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.buscador;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import ar.edu.unq.po2.tpfinal.EspecieVinchuca;
+import ar.edu.unq.po2.tpfinal.Muestra;
 
 public class FiltroTipoDeInsecto implements Filtro {
 	

@@ -1,8 +1,10 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.buscador;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+
+import ar.edu.unq.po2.tpfinal.Muestra;
 
 public class Or extends FiltroCombinado {
 

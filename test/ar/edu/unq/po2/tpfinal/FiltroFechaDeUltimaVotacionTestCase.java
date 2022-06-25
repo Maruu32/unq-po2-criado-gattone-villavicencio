@@ -14,6 +14,9 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unq.po2.tpfinal.buscador.FiltroFechaDeUltimaVotacion;
+import ar.edu.unq.po2.tpfinal.operadorrelacional.OperadorRelacionalFechas;
+
 class FiltroFechaDeUltimaVotacionTestCase {
 	
 	FiltroFechaDeUltimaVotacion eBusquedaFechaUltimaVotacion; //SUT

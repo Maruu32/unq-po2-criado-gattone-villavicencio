@@ -3,6 +3,11 @@ package ar.edu.unq.po2.tpfinal;
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.edu.unq.po2.tpfinal.buscador.Filtro;
+import ar.edu.unq.po2.tpfinal.organizacion.Organizacion;
+import ar.edu.unq.po2.tpfinal.zonadecobertura.TipoAvisoZona;
+import ar.edu.unq.po2.tpfinal.zonadecobertura.ZonaDeCobertura;
+
 public class AplicacionWeb {
 	List<Muestra> muestras;
 	List<ZonaDeCobertura> zonasDeCobertura;

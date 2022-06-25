@@ -4,6 +4,8 @@ package ar.edu.unq.po2.tpfinal;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
+
 
 
 public class Usuario {

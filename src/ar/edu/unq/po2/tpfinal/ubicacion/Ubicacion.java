@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.ubicacion;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -9,6 +9,13 @@ import static org.mockito.Mockito.verify;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unq.po2.tpfinal.organizacion.FuncionalidadExterna;
+import ar.edu.unq.po2.tpfinal.organizacion.Organizacion;
+import ar.edu.unq.po2.tpfinal.organizacion.TipoOrganizacion;
+import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
+import ar.edu.unq.po2.tpfinal.zonadecobertura.TipoAvisoZona;
+import ar.edu.unq.po2.tpfinal.zonadecobertura.ZonaDeCobertura;
+
 class OrganizacionTestCase {
 	
 	Organizacion orga1; //SUT

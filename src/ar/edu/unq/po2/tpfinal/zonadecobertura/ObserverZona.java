@@ -1,4 +1,6 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.zonadecobertura;
+
+import ar.edu.unq.po2.tpfinal.Muestra;
 
 public interface ObserverZona {
 	/**

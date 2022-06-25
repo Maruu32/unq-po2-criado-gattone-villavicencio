@@ -1,8 +1,12 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.zonadecobertura;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import ar.edu.unq.po2.tpfinal.AplicacionWeb;
+import ar.edu.unq.po2.tpfinal.Muestra;
+import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
 
 public class ZonaDeCobertura {
 	

@@ -1,4 +1,10 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.organizacion;
+
+import ar.edu.unq.po2.tpfinal.Muestra;
+import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
+import ar.edu.unq.po2.tpfinal.zonadecobertura.ObserverZona;
+import ar.edu.unq.po2.tpfinal.zonadecobertura.TipoAvisoZona;
+import ar.edu.unq.po2.tpfinal.zonadecobertura.ZonaDeCobertura;
 
 public class Organizacion implements ObserverZona{
 	

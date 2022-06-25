@@ -7,6 +7,13 @@ import java.time.LocalDate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unq.po2.tpfinal.operadorrelacional.Igual;
+import ar.edu.unq.po2.tpfinal.operadorrelacional.Mayor;
+import ar.edu.unq.po2.tpfinal.operadorrelacional.MayorIgual;
+import ar.edu.unq.po2.tpfinal.operadorrelacional.Menor;
+import ar.edu.unq.po2.tpfinal.operadorrelacional.MenorIgual;
+import ar.edu.unq.po2.tpfinal.operadorrelacional.OperadorRelacionalFechas;
+
 class OperadorRealacionalTestCase {
 	OperadorRelacionalFechas igual;
 	OperadorRelacionalFechas mayor;
