@@ -96,5 +96,4 @@ class OperadorLogicoTestCase {
 		verify(estrategia2, times(1)).buscar(muestras);
 	}
 	
-
 }
