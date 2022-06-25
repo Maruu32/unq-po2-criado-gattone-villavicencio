@@ -32,13 +32,13 @@ public class ZonaDeCobertura {
 	
 	
 	//getters
-	protected String getNombreZona() {
+	public String getNombreZona() {
 		return nombreZona;
 	}
-	protected Ubicacion getEpicentro() {
+	public Ubicacion getEpicentro() {
 		return epicentro;
 	}
-	protected double getRadio() {
+	public double getRadio() {
 		return radio;
 	}
 	protected List<ObserverZona> getObservers() {
