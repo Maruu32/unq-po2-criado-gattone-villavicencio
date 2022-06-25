@@ -6,6 +6,9 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,6 +22,7 @@ class AppWebTestCase {
 	ZonaDeCobertura zona2; 		//DOC
 	ZonaDeCobertura zona3; 		//DOC
 	Organizacion organizacion1; //DOC
+	Filtro filtro; //DOC
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -29,6 +33,7 @@ class AppWebTestCase {
 		zona3 = mock(ZonaDeCobertura.class);
 		organizacion1 = mock(Organizacion.class);
 		app = new AplicacionWeb();
+		filtro = mock(Filtro.class);
 	}
 
 	@Test
@@ -103,6 +108,18 @@ class AppWebTestCase {
 		verify(zona3, times(1)).notificar(muestra1, TipoAvisoZona.NUEVA_MUESTRA);
 		
 		
+	}
+	
+	@Test
+	void testBuscar() {
+		app.addMuestra(muestra1);
+		
+		when(filtro.buscar(app.getMuestras())).thenReturn(new ArrayList<Muestra>());
+		
+		List<Muestra> resultado = app.buscar(filtro);
+		
+		verify(filtro, times(1)).buscar(app.getMuestras());
+		assertEquals(true, resultado.isEmpty());
 	}
 	
 	
