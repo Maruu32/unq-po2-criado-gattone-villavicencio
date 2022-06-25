@@ -104,5 +104,9 @@ public class AplicacionWeb {
 		addUsuario(new Usuario(_nombre, estado)); 
 		
 	}
+	
+	public List<Muestra> buscar(Filtro filtro){
+		return filtro.buscar(this.getMuestras());
+	}
 	 	
 }

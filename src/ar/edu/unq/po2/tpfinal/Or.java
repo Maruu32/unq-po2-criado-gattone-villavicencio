@@ -1,19 +1,21 @@
 package ar.edu.unq.po2.tpfinal;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
-public class Or extends OperadorLogico {
+public class Or extends FiltroCombinado {
 
-	public Or(BuscarPor estrategia1, BuscarPor estrategia2) {
+	public Or(Filtro estrategia1, Filtro estrategia2) {
 		super(estrategia1, estrategia2);
 	}
 
 	@Override
-	public HashSet<Muestra> buscar(HashSet<Muestra> muestrasSet) {
+	public List<Muestra> buscar(List<Muestra> muestras) {
 		HashSet<Muestra> resultado = new HashSet<Muestra>();
-		resultado.addAll(estrategia1.buscar(muestrasSet));
-		resultado.addAll(estrategia2.buscar(muestrasSet));
-		return resultado;
+		resultado.addAll(estrategia1.buscar(muestras));
+		resultado.addAll(estrategia2.buscar(muestras));
+		return new ArrayList<Muestra>(resultado);
 	}
 
 }

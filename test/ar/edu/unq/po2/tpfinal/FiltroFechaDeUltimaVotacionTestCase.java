@@ -7,15 +7,17 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class BuscarPorFechaDeUltimaVotacionTestCase {
+class FiltroFechaDeUltimaVotacionTestCase {
 	
-	BuscarPorFechaDeUltimaVotacion eBusquedaFechaUltimaVotacion; //SUT
-	HashSet<Muestra> muestras;			//DOC
+	FiltroFechaDeUltimaVotacion eBusquedaFechaUltimaVotacion; //SUT
+	List<Muestra> muestras;			//DOC
 	Muestra muestra0;	//DOC
 	Muestra muestra1;	//DOC
 	Muestra muestra2;	//DOC
@@ -24,13 +26,13 @@ class BuscarPorFechaDeUltimaVotacionTestCase {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		muestras = new HashSet<Muestra>();
+		muestras = new ArrayList<Muestra>();
 		muestra0 = mock(Muestra.class);
 		muestra1 = mock(Muestra.class);
 		muestra2 = mock(Muestra.class);
 		operador = mock(OperadorRelacionalFechas.class);
 		fecha = LocalDate.parse("2020-06-09");
-		eBusquedaFechaUltimaVotacion = new BuscarPorFechaDeUltimaVotacion(operador, fecha);
+		eBusquedaFechaUltimaVotacion = new FiltroFechaDeUltimaVotacion(operador, fecha);
 		muestras.add(muestra0);
 		muestras.add(muestra1);
 		muestras.add(muestra2);
@@ -45,12 +47,12 @@ class BuscarPorFechaDeUltimaVotacionTestCase {
 	void testFechaIgual() {
 		//Setup
 		
-		HashSet<Muestra> resultadoEsperado = new HashSet<Muestra>();
+		List<Muestra> resultadoEsperado = new ArrayList<Muestra>();
 		resultadoEsperado.add(muestra0);
 		when(operador.evaluar(LocalDate.parse("2020-06-09"), LocalDate.parse("2020-06-09"))).thenReturn(true);
 		
 		//Excercise
-		HashSet<Muestra> resultadoBusqueda = eBusquedaFechaUltimaVotacion.buscar(muestras);
+		List<Muestra> resultadoBusqueda = eBusquedaFechaUltimaVotacion.buscar(muestras);
 		
 		
 		//Verify

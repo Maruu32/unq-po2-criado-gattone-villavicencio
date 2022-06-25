@@ -1,9 +1,9 @@
 package ar.edu.unq.po2.tpfinal;
 
 import java.time.LocalDate;
-import java.util.HashSet;
+import java.util.List;
 
-public abstract class  BuscarPorFecha {
+public abstract class  FiltroFecha {
 	
 	/**
 	 * @author Lenardo Criado
@@ -17,7 +17,7 @@ public abstract class  BuscarPorFecha {
 	private LocalDate fechaBuscada;
 	private OperadorRelacionalFechas operadorRelacional;
 
-	public BuscarPorFecha(OperadorRelacionalFechas operador, LocalDate fecha) {
+	public FiltroFecha(OperadorRelacionalFechas operador, LocalDate fecha) {
 		this.setOperadorRelacional(operador);
 		this.setFechaBuscada(fecha);
 	}
@@ -38,6 +38,6 @@ public abstract class  BuscarPorFecha {
 		return operadorRelacional;
 	}
 	
-	public abstract HashSet<Muestra> buscar(HashSet<Muestra> muestrasSet);
+	public abstract List<Muestra> buscar(List<Muestra> muestrasSet);
 
 }

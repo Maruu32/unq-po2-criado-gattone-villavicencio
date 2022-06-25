@@ -6,23 +6,25 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class BuscarPorNivelDeVerificacionTestCase {
+class FiltroNivelDeVerificacionTestCase {
 	
-	BuscarPorNivelDeVerificacion eTipoDeinsecto;	//SUT
-	HashSet<Muestra> muestras;			//DOC
+	FiltroNivelDeVerificacion eTipoDeinsecto;	//SUT
+	List<Muestra> muestras;			//DOC
 	Muestra muestra0;	//DOC
 	Muestra muestra1;	//DOC
 	Muestra muestra2;	//DOC
 
 	@BeforeEach
 	void setUp() throws Exception {
-		eTipoDeinsecto = new BuscarPorNivelDeVerificacion(NivelVerificacion.VOTADA);
-		muestras = new HashSet<Muestra>();
+		eTipoDeinsecto = new FiltroNivelDeVerificacion(NivelVerificacion.VOTADA);
+		muestras = new ArrayList<Muestra>();
 		muestra0 = mock(Muestra.class);
 		muestra1 = mock(Muestra.class);
 		muestra2 = mock(Muestra.class);
@@ -37,11 +39,11 @@ class BuscarPorNivelDeVerificacionTestCase {
 		when(muestra0.estaVerificada()).thenReturn(false);
 		when(muestra1.estaVerificada()).thenReturn(true);
 		when(muestra2.estaVerificada()).thenReturn(true);
-		HashSet<Muestra> resultadoEsperado = new HashSet<Muestra>();
+		List<Muestra> resultadoEsperado = new ArrayList<Muestra>();
 		resultadoEsperado.add(muestra0);
 				
 		//Excercise
-		HashSet<Muestra> resultadoBusqueda = eTipoDeinsecto.buscar(muestras);
+		List<Muestra> resultadoBusqueda = eTipoDeinsecto.buscar(muestras);
 		
 		//Verify
 		assertEquals(true, resultadoBusqueda.containsAll(resultadoEsperado));
@@ -60,11 +62,11 @@ class BuscarPorNivelDeVerificacionTestCase {
 		when(muestra0.estaVerificada()).thenReturn(true);
 		when(muestra1.estaVerificada()).thenReturn(true);
 		when(muestra2.estaVerificada()).thenReturn(true);
-		HashSet<Muestra> resultadoEsperado = new HashSet<Muestra>();
+		List<Muestra> resultadoEsperado = new ArrayList<Muestra>();
 		resultadoEsperado.add(muestra0);
 				
 		//Excersice
-		HashSet<Muestra> resultadoBusqueda = eTipoDeinsecto.buscar(muestras);
+		List<Muestra> resultadoBusqueda = eTipoDeinsecto.buscar(muestras);
 		
 		//Verify
 		assertEquals(true, resultadoBusqueda.isEmpty());

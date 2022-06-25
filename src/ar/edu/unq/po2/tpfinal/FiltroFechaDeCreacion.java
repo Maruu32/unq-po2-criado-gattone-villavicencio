@@ -1,10 +1,10 @@
 package ar.edu.unq.po2.tpfinal;
 
 import java.time.LocalDate;
-import java.util.HashSet;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class BuscarPorFechaDeCreacion extends BuscarPorFecha implements BuscarPor {
+public class FiltroFechaDeCreacion extends FiltroFecha implements Filtro {
 	/**
 	 * @author Lenardo Criado
 	 * 
@@ -14,18 +14,18 @@ public class BuscarPorFechaDeCreacion extends BuscarPorFecha implements BuscarPo
 	 * @param fecha es la fecha buscada
 	 */
 
-	public BuscarPorFechaDeCreacion(OperadorRelacionalFechas operador, LocalDate fecha) {
+	public FiltroFechaDeCreacion(OperadorRelacionalFechas operador, LocalDate fecha) {
 		super(operador,fecha);
 	}	
 	
 
 	@Override
-	public HashSet<Muestra> buscar(HashSet<Muestra> muestrasSet) {
+	public List<Muestra> buscar(List<Muestra> muestrasSet) {
 		OperadorRelacionalFechas operador = this.getOperadorRelacional();
-		return (HashSet<Muestra>) muestrasSet
+		return muestrasSet
 				.stream()
 				.filter(muestra -> operador.evaluar(muestra.getFechaCreacion(), this.getFechaBuscada()))
-				.collect(Collectors.toSet());
+				.collect(Collectors.toList());
 	}
 
 }

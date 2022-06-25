@@ -1,10 +1,10 @@
 package ar.edu.unq.po2.tpfinal;
 
 import java.time.LocalDate;
-import java.util.HashSet;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class BuscarPorFechaDeUltimaVotacion extends BuscarPorFecha {
+public class FiltroFechaDeUltimaVotacion extends FiltroFecha {
 	
 	/**
 	 * @author Lenardo Criado
@@ -15,17 +15,17 @@ public class BuscarPorFechaDeUltimaVotacion extends BuscarPorFecha {
 	 * @param fecha es la fecha buscada
 	 */
 
-	public BuscarPorFechaDeUltimaVotacion(OperadorRelacionalFechas operador, LocalDate fecha) {
+	public FiltroFechaDeUltimaVotacion(OperadorRelacionalFechas operador, LocalDate fecha) {
 		super(operador, fecha);
 	}
 
 	@Override
-	public HashSet<Muestra> buscar(HashSet<Muestra> muestrasSet) {//TODO: refactor template method
+	public List<Muestra> buscar(List<Muestra> muestrasSet) {//TODO: refactor template method
 		OperadorRelacionalFechas operador = this.getOperadorRelacional();
-		return (HashSet<Muestra>) muestrasSet
+		return muestrasSet
 				.stream()
 				.filter(muestra -> operador.evaluar(muestra.getUltimaFechaOpinion(), this.getFechaBuscada()))
-				.collect(Collectors.toSet());
+				.collect(Collectors.toList());
 	}
 
 

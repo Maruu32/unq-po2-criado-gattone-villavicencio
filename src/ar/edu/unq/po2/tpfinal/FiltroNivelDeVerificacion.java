@@ -1,9 +1,9 @@
 package ar.edu.unq.po2.tpfinal;
 
-import java.util.HashSet;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class BuscarPorNivelDeVerificacion implements BuscarPor {
+public class FiltroNivelDeVerificacion implements Filtro {
 	
 	protected NivelVerificacion nivelDeVerificacion;
 	
@@ -19,18 +19,18 @@ public class BuscarPorNivelDeVerificacion implements BuscarPor {
 		this.nivelDeVerificacion = nivelDeVerificacion;
 	}
 
-	public BuscarPorNivelDeVerificacion(NivelVerificacion votada) {
+	public FiltroNivelDeVerificacion(NivelVerificacion votada) {
 		this.setNivelDeVerificacion(votada);
 	}
 
-	public HashSet<Muestra> buscar(HashSet<Muestra> muestras) {
+	public List<Muestra> buscar(List<Muestra> muestras) {
 		/**
 		 * Filtra el set segun el estado de la muestra
 		 */
-		return (HashSet<Muestra>) muestras
+		return muestras
 				.stream()
 				.filter(muestra -> nivelDeVerificacion.value() == muestra.estaVerificada())
-				.collect(Collectors.toSet());
+				.collect(Collectors.toList());
 	}
 
 }

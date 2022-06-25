@@ -6,15 +6,17 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class BuscarPorTipoDeInsectoTestCase {
+class FiltroTipoDeInsectoTestCase {
 	
-	BuscarPorTipoDeInsecto eTipoDeinsecto;	//SUT
-	HashSet<Muestra> muestras;			//DOC
+	FiltroTipoDeInsecto eTipoDeinsecto;	//SUT
+	List<Muestra> muestras;			//DOC
 	Muestra muestra0;	//DOC
 	Muestra muestra1;	//DOC
 	Muestra muestra2;	//DOC
@@ -22,8 +24,8 @@ class BuscarPorTipoDeInsectoTestCase {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		eTipoDeinsecto = new BuscarPorTipoDeInsecto(EspecieVinchuca.VICHUCA_INFESTANS);
-		muestras = new HashSet<Muestra>();
+		eTipoDeinsecto = new FiltroTipoDeInsecto(EspecieVinchuca.VICHUCA_INFESTANS);
+		muestras = new ArrayList<Muestra>();
 		muestra0 = mock(Muestra.class);
 		muestra1 = mock(Muestra.class);
 		muestra2 = mock(Muestra.class);
@@ -39,11 +41,11 @@ class BuscarPorTipoDeInsectoTestCase {
 		when(muestra0.getTipo()).thenReturn(EspecieVinchuca.VICHUCA_INFESTANS);
 		when(muestra1.getTipo()).thenReturn(EspecieVinchuca.VICHUCA_GUASAYANA);
 		when(muestra2.getTipo()).thenReturn(EspecieVinchuca.VICHUCA_GUASAYANA);
-		HashSet<Muestra> resultadoEsperado = new HashSet<Muestra>();
+		List<Muestra> resultadoEsperado = new ArrayList<Muestra>();
 		resultadoEsperado.add(muestra0);
 				
 		//Excersice
-		HashSet<Muestra> resultadoBusqueda = eTipoDeinsecto.buscar(muestras);
+		List<Muestra> resultadoBusqueda = eTipoDeinsecto.buscar(muestras);
 		
 		//Verify
 		assertEquals(true, resultadoBusqueda.containsAll(resultadoEsperado));
@@ -62,11 +64,11 @@ class BuscarPorTipoDeInsectoTestCase {
 		when(muestra0.getTipo()).thenReturn(EspecieVinchuca.VICHUCA_SORDIDA);
 		when(muestra1.getTipo()).thenReturn(EspecieVinchuca.VICHUCA_GUASAYANA);
 		when(muestra2.getTipo()).thenReturn(EspecieVinchuca.VICHUCA_GUASAYANA);
-		HashSet<Muestra> resultadoEsperado = new HashSet<Muestra>();
+		List<Muestra> resultadoEsperado = new ArrayList<Muestra>();
 		resultadoEsperado.add(muestra0);
 				
 		//Excersice
-		HashSet<Muestra> resultadoBusqueda = eTipoDeinsecto.buscar(muestras);
+		List<Muestra> resultadoBusqueda = eTipoDeinsecto.buscar(muestras);
 		
 		//Verify
 		assertEquals(true, resultadoBusqueda.isEmpty());

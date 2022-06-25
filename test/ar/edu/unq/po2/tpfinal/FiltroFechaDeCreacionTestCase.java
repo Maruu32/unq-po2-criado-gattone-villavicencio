@@ -7,15 +7,16 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class BuscarPorFechaDeCreacionTestCase {
+class FiltroFechaDeCreacionTestCase {
 	
-	BuscarPorFechaDeCreacion eBusquedaFechaCreacion; //SUT
-	HashSet<Muestra> muestras;			//DOC
+	FiltroFechaDeCreacion eBusquedaFechaCreacion; //SUT
+	List<Muestra> muestras;			//DOC
 	Muestra muestra0;	//DOC
 	Muestra muestra1;	//DOC
 	Muestra muestra2;	//DOC
@@ -24,13 +25,13 @@ class BuscarPorFechaDeCreacionTestCase {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		muestras = new HashSet<Muestra>();
+		muestras = new ArrayList<Muestra>();
 		muestra0 = mock(Muestra.class);
 		muestra1 = mock(Muestra.class);
 		muestra2 = mock(Muestra.class);
 		operador = mock(OperadorRelacionalFechas.class);
 		fecha = LocalDate.parse("2020-06-09");
-		eBusquedaFechaCreacion = new BuscarPorFechaDeCreacion(operador, fecha);
+		eBusquedaFechaCreacion = new FiltroFechaDeCreacion(operador, fecha);
 		muestras.add(muestra0);
 		muestras.add(muestra1);
 		muestras.add(muestra2);
@@ -44,12 +45,12 @@ class BuscarPorFechaDeCreacionTestCase {
 	void testFechaIgual() {
 		//Setup
 		
-		HashSet<Muestra> resultadoEsperado = new HashSet<Muestra>();
+		List<Muestra> resultadoEsperado = new ArrayList<Muestra>();
 		resultadoEsperado.add(muestra0);
 		when(operador.evaluar(LocalDate.parse("2020-06-09"), LocalDate.parse("2020-06-09"))).thenReturn(true);
 		
 		//Excercise
-		HashSet<Muestra> resultadoBusqueda = eBusquedaFechaCreacion.buscar(muestras);
+		List<Muestra> resultadoBusqueda = eBusquedaFechaCreacion.buscar(muestras);
 		
 		
 		//Verify

@@ -1,9 +1,9 @@
 package ar.edu.unq.po2.tpfinal;
 
-import java.util.HashSet;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class BuscarPorTipoDeInsecto implements BuscarPor {
+public class FiltroTipoDeInsecto implements Filtro {
 	
 	protected EspecieVinchuca especieBuscada; 
 
@@ -21,19 +21,19 @@ public class BuscarPorTipoDeInsecto implements BuscarPor {
 		this.especieBuscada = especieBuscada;
 	}
 
-	public BuscarPorTipoDeInsecto(EspecieVinchuca especieBuscada) {
+	public FiltroTipoDeInsecto(EspecieVinchuca especieBuscada) {
 		this.setEspecieBuscada(especieBuscada);
 	}
 
 	@Override
-	public HashSet<Muestra> buscar(HashSet<Muestra> muestrasSet) {
+	public List<Muestra> buscar(List<Muestra> muestrasSet) {
 		/**
 		 * Filtra el set segun la especie buscada
 		 */
-		return (HashSet<Muestra>) muestrasSet
+		return muestrasSet
 				.stream()
 				.filter(muestra -> especieBuscada.equals(muestra.getTipo()))
-				.collect(Collectors.toSet());
+				.collect(Collectors.toList());
 	}
 
 }
