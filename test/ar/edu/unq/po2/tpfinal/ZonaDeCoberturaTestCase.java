@@ -13,6 +13,11 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
+import ar.edu.unq.po2.tpfinal.zonadecobertura.ObserverZona;
+import ar.edu.unq.po2.tpfinal.zonadecobertura.TipoAvisoZona;
+import ar.edu.unq.po2.tpfinal.zonadecobertura.ZonaDeCobertura;
+
 class ZonaDeCoberturaTestCase {
 	
 	ZonaDeCobertura zonaDeCobertura; //SUT
@@ -78,6 +83,7 @@ class ZonaDeCoberturaTestCase {
 		List<Muestra> resultado = zonaDeCobertura.muestrasDentroDeZona();
 		
 		//Verify
+		assertEquals("Quilmes",zonaDeCobertura.getNombreZona());
 		assertEquals(2,resultado.size());
 		assertEquals(muestra1,resultado.get(0));
 		assertEquals(muestra2,resultado.get(1));

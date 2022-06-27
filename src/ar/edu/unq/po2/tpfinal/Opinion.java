@@ -45,4 +45,4 @@ public class Opinion {
 	public EstadoUsuario geteUsuario() {
 		return eUsuario;
 	}
-
+}

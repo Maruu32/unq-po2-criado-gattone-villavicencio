@@ -5,9 +5,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+
+import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
 
 public class Muestra {
-	private BufferedImage foto;
+	private BufferedImage foto; 
 	private Ubicacion ubicacion;
 	private Usuario usuario;
 	private LocalDate fechaCreacion = LocalDate.now();
@@ -18,11 +21,11 @@ public class Muestra {
 	
 	private MuestraState validacionMuestra = new ValidacionMuestraBasico();
 			
-	public Muestra(Ubicacion u, BufferedImage foto, Opinion aOpinion) {
+	public Muestra(Usuario usuario, Ubicacion u, BufferedImage foto, Opinion aOpinion) {
 		this.setUbicacion(u); 
 		this.setFoto(foto);
 		this.setOpinion(aOpinion);
-	}
+	} 
 
 	public ClasificacionMuestra getTipo() {
 		return this.getOpinion().getTipoMuestra();
@@ -114,4 +117,16 @@ public class Muestra {
 	public LocalDate getFechaCreacion(){
 		return this.fechaCreacion;
 	}
+	
+	public List<Muestra> muestasAMenosDe(double distancia, List<Muestra> muestras) {
+		/**
+		 * Retorna una sublista de @param muestras con las muestras a menos de @param distancia en de @param muestra1
+		 */
+		Ubicacion ubicacionMuestra =  this.getUbicacion();
+		return muestras
+				.stream()
+				.filter(muestra -> ubicacionMuestra.distanciaEnKm(muestra.getUbicacion()) < distancia) //Filtrando muestras con ubicación menor a distancia
+				.collect(Collectors.toList());
+	}
+	
 }
