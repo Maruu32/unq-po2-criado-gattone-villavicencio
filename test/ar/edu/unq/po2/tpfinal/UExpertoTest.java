@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unq.po2.tpfinal.persona.UExperto;
+import ar.edu.unq.po2.tpfinal.persona.Usuario;
+
 class UExpertoTest {
 	
 		UExperto experto; //sut
@@ -28,7 +31,7 @@ class UExpertoTest {
 			Muestra muestra9 = new Muestra(usr, null, null, null);
 			Muestra muestra10 = new Muestra(usr, null, null, null);
 			
-			experto = new UExperto(usr, muestra1); 
+			experto = new UExperto(); 
 			ap.registarUsuario("pepe", experto);
 		
 		
@@ -36,7 +39,7 @@ class UExpertoTest {
 		
 		@Test
 		void test_opinar2() {
-			assertFalse(experto.puedeOpinar());
+			assertFalse(experto.puedeOpinar(muestra));
 		}
 			
 	

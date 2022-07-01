@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.persona;
 
 import static org.junit.jupiter.api.DynamicTest.stream;
 
@@ -6,23 +6,23 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
+import ar.edu.unq.po2.tpfinal.ClasificacionMuestra;
+import ar.edu.unq.po2.tpfinal.Muestra;
+import ar.edu.unq.po2.tpfinal.Opinion;
+
 public class UBasico implements EstadoUsuario  { 
-	
-	private Muestra muestra;
-	private Usuario usuario;
+
 	
 	public UBasico(Usuario _usuario, Muestra _muestra) { 
-		usuario = _usuario;
-		muestra= _muestra;
 		
 	}
 	
 
 	@Override
-	public void opinar(ClasificacionMuestra clasificacion, Usuario u, Muestra muestra) {
+	public void opinar(ClasificacionMuestra clasificacion, Usuario usuario, Muestra muestra) {
 		//crea una opinion si puede opinar en la Muestra
-		if (puedeOpinar()) {
-			 usuario.getAp().agregarOpinion(new Opinion(usuario, muestra, clasificacion)); 
+		if (puedeOpinar(muestra)) {
+			 muestra.agregarOpinion(new Opinion(usuario, muestra, clasificacion));  
 			 subirCategoria(usuario);	
 		}
 		
@@ -30,27 +30,27 @@ public class UBasico implements EstadoUsuario  {
 	
 	private void subirCategoria(Usuario usuario) {
 		//Si cumple con la cantidad de muestras y opiniones sube de categoria
-		if(relizoDiezMuestras() && realizoVeinteOpiniones()){
-			usuario.setEstadoUsuario(new UExperto(usuario,muestra));
+		if(relizoDiezMuestras(usuario) && realizoVeinteOpiniones(usuario)){
+			usuario.setEstadoUsuario(new UExperto());
 		}
 	}
 
 
-	boolean realizoVeinteOpiniones(){
+	public boolean realizoVeinteOpiniones(Usuario usuario){
 		ArrayList<Opinion> resultado = new ArrayList<>();
 		usuario.getMisOpiniones().parallelStream().filter(p->contarDias(p.getFechaCreacion(),LocalDate.now())>30).forEach(p -> resultado.add(p));
-		return resultado.size() > 20;
+		return resultado.size() > 20; 
 	}
 
 
-	boolean relizoDiezMuestras() {
+	public boolean relizoDiezMuestras(Usuario usuario) {
 		ArrayList<Muestra> resultado = new ArrayList<>();
 		usuario.getMisMuestras().parallelStream().filter(p->contarDias(p.getFechaCreacion(),LocalDate.now())>30 ).forEach(p -> resultado.add(p));
 		return resultado.size() > 10;  
 	}
 	
 	
-	public boolean puedeOpinar() {
+	public boolean puedeOpinar(Muestra muestra) {
 		//devuelve true la lista de opinones de experto esta vacia
 		return muestra.getOpinionesExpertos().isEmpty();
 	}

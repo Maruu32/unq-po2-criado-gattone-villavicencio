@@ -9,12 +9,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import ar.edu.unq.po2.tpfinal.persona.UBasico;
+import ar.edu.unq.po2.tpfinal.persona.Usuario;
+
 class UBasicoTest {
 	UBasico basico; //sut
-	
 	Usuario usr; //doc
 	AplicacionWeb ap; //doc
-	Muestra muestra;//doc
+	Muestra muestra = new Muestra(usr, null, null,null);//doc
 	
 	
 	
@@ -37,7 +39,7 @@ class UBasicoTest {
 		
 		basico = new UBasico(usr, muestra1);
 		ap.registarUsuario("pepe", basico);
-		Opinion opi1 = new Opinion(usr, muestra10, null);
+		Opinion opi1 = new Opinion(usr, muestra, null);
 		Opinion opi2 = new Opinion(usr, muestra, null);
 		Opinion opi3 = new Opinion(usr, muestra, null); 
 		Opinion opi4 = new Opinion(usr, muestra, null);
@@ -58,6 +60,9 @@ class UBasicoTest {
 		Opinion opi19 = new Opinion(usr, muestra, null);
 		Opinion opi20 = new Opinion(usr, muestra, null);
 		
+		muestra.agregarOpinion(opi1);
+		usr.agregarOpinion(opi20);
+		
 
 		
 		
@@ -69,21 +74,21 @@ class UBasicoTest {
 	@Test
 	void test_realizoMuestras() {
 		
-		assertFalse(basico.relizoDiezMuestras());
+		assertFalse(basico.relizoDiezMuestras(usr));
 		
 	}
 	
 	@Test
 	void test_realizoOpinion() {
 		
-		assertFalse(basico.realizoVeinteOpiniones()); 
+		assertFalse(basico.realizoVeinteOpiniones(usr)); 
 	}
 	
 	@Test
 	void test_puedeopinar() {
 		
 		
-		assertTrue(basico.puedeOpinar()); 
+		assertFalse(basico.puedeOpinar(muestra)); 
 		
 		
 	}

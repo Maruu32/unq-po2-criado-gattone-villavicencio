@@ -5,6 +5,8 @@ import java.util.List;
 
 import ar.edu.unq.po2.tpfinal.buscador.Filtro;
 import ar.edu.unq.po2.tpfinal.organizacion.Organizacion;
+import ar.edu.unq.po2.tpfinal.persona.EstadoUsuario;
+import ar.edu.unq.po2.tpfinal.persona.Usuario;
 import ar.edu.unq.po2.tpfinal.zonadecobertura.TipoAvisoZona;
 import ar.edu.unq.po2.tpfinal.zonadecobertura.ZonaDeCobertura;
 
@@ -13,7 +15,7 @@ public class AplicacionWeb {
 	List<ZonaDeCobertura> zonasDeCobertura;
 	List<Organizacion> organizaciones;
 	List<Usuario> usuarios;
-	List<Opinion> opiniones;
+
 
 	
 	/**
@@ -94,14 +96,6 @@ public class AplicacionWeb {
 	
 	public void addOrganizacion(Organizacion organizacion1) {
 		this.getOrganizaciones().add(organizacion1);
-	}
-	public void agregarOpinion(Opinion opinion) {
-		opiniones.add(opinion); 
-		
-	}
-	
-	public List<Opinion> getOpiniones(){
-		return opiniones; 
 	}
 
 	

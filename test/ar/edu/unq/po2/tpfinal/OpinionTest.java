@@ -11,6 +11,8 @@ import java.util.Date;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import ar.edu.unq.po2.tpfinal.persona.Usuario;
+
 
 class OpinionTest { 
 

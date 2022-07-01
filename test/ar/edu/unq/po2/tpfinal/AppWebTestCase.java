@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import ar.edu.unq.po2.tpfinal.buscador.Filtro;
 import ar.edu.unq.po2.tpfinal.organizacion.Organizacion;
+import ar.edu.unq.po2.tpfinal.persona.Usuario;
 import ar.edu.unq.po2.tpfinal.zonadecobertura.TipoAvisoZona;
 import ar.edu.unq.po2.tpfinal.zonadecobertura.ZonaDeCobertura;
 

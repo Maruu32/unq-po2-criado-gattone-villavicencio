@@ -1,9 +1,13 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.persona;
 
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import ar.edu.unq.po2.tpfinal.AplicacionWeb;
+import ar.edu.unq.po2.tpfinal.ClasificacionMuestra;
+import ar.edu.unq.po2.tpfinal.Muestra;
+import ar.edu.unq.po2.tpfinal.Opinion;
 import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
 
 
@@ -11,16 +15,16 @@ import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
 public class Usuario {
 	private String nombre;
 	private EstadoUsuario estadoUsuario; 
-	private ArrayList<Muestra> misMuestras;
-	private ArrayList<Opinion> misOpiniones;
+	private ArrayList<Muestra> susMuestras;
+	private ArrayList<Opinion> susOpiniones;
 	private AplicacionWeb appWeb;
 	
 	
 	public Usuario(String _nombre,EstadoUsuario estado){
 		nombre = _nombre;
 		estadoUsuario = estado;
-		misMuestras = new ArrayList<Muestra>(); 
-		misOpiniones = new ArrayList<Opinion>();
+		susMuestras = new ArrayList<Muestra>(); 
+		susOpiniones = new ArrayList<Opinion>();
 	}
 	
 	public void nuevaMuestra(ClasificacionMuestra cmuestra, Ubicacion ubicacion ,BufferedImage foto, Opinion aOpinion ) {
@@ -37,11 +41,11 @@ public class Usuario {
 	}
 
 	public ArrayList<Muestra> getMisMuestras() {
-		return misMuestras;
+		return susMuestras;
 	}
 
 	public ArrayList<Opinion> getMisOpiniones() {
-		return misOpiniones;
+		return susOpiniones;
 	}
 
 	public EstadoUsuario getEstadoUsuario() {
@@ -52,6 +56,10 @@ public class Usuario {
 	public AplicacionWeb getAp() {
 		// TODO Auto-generated method stub
 		return appWeb;
+	}
+	
+	public void agregarOpinion(Opinion opinion) {
+		susOpiniones.add(null);
 	}
 
 }

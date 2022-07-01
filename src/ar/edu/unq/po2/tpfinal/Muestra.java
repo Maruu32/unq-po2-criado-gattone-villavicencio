@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import ar.edu.unq.po2.tpfinal.persona.Usuario;
 import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
 
 public class Muestra {
@@ -28,7 +29,7 @@ public class Muestra {
 	} 
 
 	public ClasificacionMuestra getTipo() {
-		return this.getOpinion().getTipoMuestra();
+		return this.getOpinion().getTipoMuestra(); 
 	}
 //Devuelve la clasificacion de muestra que mas opiniones tuvo. 
 	//Devuelve el tipo de muestra(Vinchuca, Chinche o no Definida ) ganadora en las opiniones.
@@ -84,7 +85,7 @@ public class Muestra {
 	}
 	//Opiniones
 	
-	private Opinion getOpinion(){ return this.opinion;}
+	private Opinion getOpinion(){return this.opinion; }
 	
 	private void setOpinion(Opinion op){ this.opinion = op; }
 	
@@ -93,7 +94,7 @@ public class Muestra {
 	public List<Opinion> getOpinionesExpertos(){ return this.opinionesExp; }
 	
 	public List<Opinion> getOpiniones() {
-		List<Opinion> reviews = new ArrayList<>();
+		List<Opinion> reviews = new ArrayList<>(); 
 		reviews.addAll(this.getOpinionesBasicos());
 		reviews.addAll(this.getOpinionesExpertos());
 		return reviews;
@@ -127,6 +128,10 @@ public class Muestra {
 				.stream()
 				.filter(muestra -> ubicacionMuestra.distanciaEnKm(muestra.getUbicacion()) < distancia) //Filtrando muestras con ubicación menor a distancia
 				.collect(Collectors.toList());
+	}
+	
+	public void agregarOpinion(Opinion _opinion){
+		opinionesExp.add(_opinion);
 	}
 	
 }

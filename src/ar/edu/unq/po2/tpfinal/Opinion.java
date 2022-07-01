@@ -2,6 +2,9 @@ package ar.edu.unq.po2.tpfinal;
 
 import java.time.LocalDate;
 
+import ar.edu.unq.po2.tpfinal.persona.EstadoUsuario;
+import ar.edu.unq.po2.tpfinal.persona.Usuario;
+
 public class Opinion {
 	private Muestra muestra;
 	private LocalDate fechaCreacion;
