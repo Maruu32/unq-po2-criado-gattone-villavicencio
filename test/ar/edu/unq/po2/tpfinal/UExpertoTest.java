@@ -19,6 +19,7 @@ class UExpertoTest {
 		@BeforeEach
 		void setUp(){
 			ap = new AplicacionWeb();
+			
 			usr = new Usuario(null, experto);
 			muestra = new Muestra(usr, null, null, null);
 			Muestra muestra2 = new Muestra(usr, null, null, null);
@@ -33,6 +34,31 @@ class UExpertoTest {
 			
 			experto = new UExperto(); 
 			ap.registarUsuario("pepe", experto);
+			
+			Opinion po1 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po2 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po3 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po4 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po5 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po6 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po7 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po8 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po9 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po10 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po11 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po12 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po13 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po14 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA);
+			Opinion po15 = new Opinion(usr, muestra10, EspecieVinchuca.VICHUCA_GUASAYANA); 
+			
+			
+			experto.opinar( EspecieVinchuca.VICHUCA_GUASAYANA, usr, muestra10);
+			experto.opinar( EspecieVinchuca.VICHUCA_GUASAYANA, usr, muestra10);
+			experto.opinar( EspecieVinchuca.VICHUCA_GUASAYANA, usr, muestra10);
+			experto.opinar( EspecieVinchuca.VICHUCA_GUASAYANA, usr, muestra10);
+			experto.opinar( EspecieVinchuca.VICHUCA_GUASAYANA, usr, muestra10);
+			
+			
 		
 		
 		}		

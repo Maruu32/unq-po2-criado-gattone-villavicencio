@@ -21,7 +21,7 @@ public class UBasico implements EstadoUsuario  {
 	@Override
 	public void opinar(ClasificacionMuestra clasificacion, Usuario usuario, Muestra muestra) {
 		//crea una opinion si puede opinar en la Muestra
-		if (puedeOpinar(muestra)) {
+		if (puedeOpinar(muestra)) { 
 			 muestra.agregarOpinion(new Opinion(usuario, muestra, clasificacion));  
 			 subirCategoria(usuario);	
 		}

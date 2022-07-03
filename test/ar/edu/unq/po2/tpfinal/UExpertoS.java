@@ -5,10 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unq.po2.tpfinal.persona.UExperto;
 import ar.edu.unq.po2.tpfinal.persona.UExpertoSiempre;
 import ar.edu.unq.po2.tpfinal.persona.Usuario;
 
-class UExpertoS {
+class UExpertoS { 
 
 	UExpertoSiempre experto; //sut
 	 
@@ -33,6 +34,9 @@ class UExpertoS {
 		
 		experto = new UExpertoSiempre(); 
 		ap.registarUsuario("pepe", experto);
+		
+		experto.opinar( EspecieVinchuca.VICHUCA_GUASAYANA, usr, muestra10);
+
 	
 	
 	}		
@@ -41,7 +45,4 @@ class UExpertoS {
 	void test_opinar() {
 		assertFalse(experto.puedeOpinar(muestra));
 	}
-		
-
-
 }

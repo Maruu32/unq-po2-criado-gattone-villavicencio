@@ -17,7 +17,7 @@ public class Usuario {
 	private EstadoUsuario estadoUsuario; 
 	private ArrayList<Muestra> susMuestras;
 	private ArrayList<Opinion> susOpiniones;
-	private AplicacionWeb appWeb;
+
 	
 	
 	public Usuario(String _nombre,EstadoUsuario estado){
@@ -27,7 +27,7 @@ public class Usuario {
 		susOpiniones = new ArrayList<Opinion>();
 	}
 	
-	public void nuevaMuestra(ClasificacionMuestra cmuestra, Ubicacion ubicacion ,BufferedImage foto, Opinion aOpinion ) {
+	public void nuevaMuestra(AplicacionWeb appWeb,ClasificacionMuestra cmuestra, Ubicacion ubicacion ,BufferedImage foto, Opinion aOpinion ) {
 		appWeb.addMuestra(new Muestra(this, ubicacion, foto, aOpinion ));
 	}
 
@@ -53,10 +53,6 @@ public class Usuario {
 		return estadoUsuario;
 	}
 
-	public AplicacionWeb getAp() {
-		// TODO Auto-generated method stub
-		return appWeb;
-	}
 	
 	public void agregarOpinion(Opinion opinion) {
 		susOpiniones.add(null);
