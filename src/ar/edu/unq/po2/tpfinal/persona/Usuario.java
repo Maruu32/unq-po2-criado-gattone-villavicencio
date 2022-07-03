@@ -17,17 +17,19 @@ public class Usuario {
 	private EstadoUsuario estadoUsuario; 
 	private ArrayList<Muestra> susMuestras;
 	private ArrayList<Opinion> susOpiniones;
+	private AplicacionWeb appWeb;
 
 	
 	
-	public Usuario(String _nombre,EstadoUsuario estado){
+	public Usuario(String _nombre,EstadoUsuario estado, AplicacionWeb _appWeb){
 		nombre = _nombre;
 		estadoUsuario = estado;
 		susMuestras = new ArrayList<Muestra>(); 
 		susOpiniones = new ArrayList<Opinion>();
+		appWeb = _appWeb;
 	}
 	
-	public void nuevaMuestra(AplicacionWeb appWeb,ClasificacionMuestra cmuestra, Ubicacion ubicacion ,BufferedImage foto, Opinion aOpinion ) {
+	public void nuevaMuestra(ClasificacionMuestra cmuestra, Ubicacion ubicacion ,BufferedImage foto, Opinion aOpinion ) {
 		appWeb.addMuestra(new Muestra(this, ubicacion, foto, aOpinion ));
 	}
 
@@ -40,11 +42,7 @@ public class Usuario {
 		estadoUsuario = _estadoUsuario;
 	}
 
-	public ArrayList<Muestra> getMisMuestras() {
-		return susMuestras;
-	}
-
-	public ArrayList<Opinion> getMisOpiniones() {
+	public ArrayList<Opinion> getSusOpiniones() {
 		return susOpiniones;
 	}
 
@@ -55,7 +53,12 @@ public class Usuario {
 
 	
 	public void agregarOpinion(Opinion opinion) {
-		susOpiniones.add(null);
+		susOpiniones.add(opinion);
+	}
+
+	public AplicacionWeb getAppWeb() {
+		// TODO Auto-generated method stub
+		return appWeb;
 	}
 
 }

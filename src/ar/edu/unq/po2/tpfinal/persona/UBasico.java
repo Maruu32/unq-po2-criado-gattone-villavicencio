@@ -13,7 +13,7 @@ import ar.edu.unq.po2.tpfinal.Opinion;
 public class UBasico implements EstadoUsuario  { 
 
 	
-	public UBasico(Usuario _usuario, Muestra _muestra) { 
+	public UBasico() { 
 		
 	}
 	
@@ -22,7 +22,7 @@ public class UBasico implements EstadoUsuario  {
 	public void opinar(ClasificacionMuestra clasificacion, Usuario usuario, Muestra muestra) {
 		//crea una opinion si puede opinar en la Muestra
 		if (puedeOpinar(muestra)) { 
-			 muestra.agregarOpinion(new Opinion(usuario, muestra, clasificacion));  
+			 usuario.agregarOpinion(new Opinion(usuario, muestra, clasificacion));  
 			 subirCategoria(usuario);	
 		}
 		
@@ -38,15 +38,15 @@ public class UBasico implements EstadoUsuario  {
 
 	public boolean realizoVeinteOpiniones(Usuario usuario){
 		ArrayList<Opinion> resultado = new ArrayList<>();
-		usuario.getMisOpiniones().parallelStream().filter(p->contarDias(p.getFechaCreacion(),LocalDate.now())>30).forEach(p -> resultado.add(p));
-		return resultado.size() > 20; 
+		usuario.getSusOpiniones().parallelStream().filter(p->contarDias(p.getFechaCreacion(),LocalDate.now())<30).forEach(p -> resultado.add(p));
+		return resultado.size() >= 20; 
 	}
 
 
 	public boolean relizoDiezMuestras(Usuario usuario) {
 		ArrayList<Muestra> resultado = new ArrayList<>();
-		usuario.getMisMuestras().parallelStream().filter(p->contarDias(p.getFechaCreacion(),LocalDate.now())>30 ).forEach(p -> resultado.add(p));
-		return resultado.size() > 10;  
+		usuario.getAppWeb().getMuestras().parallelStream().filter(p->contarDias(p.getFechaCreacion(),LocalDate.now())<30 ).forEach(p -> resultado.add(p));
+		return resultado.size() >= 10;  
 	}
 	
 	

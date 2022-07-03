@@ -130,6 +130,7 @@ public class Muestra {
 				.collect(Collectors.toList());
 	}
 	
+	
 	public void agregarOpinion(Opinion _opinion){
 		opinionesExp.add(_opinion);
 	}

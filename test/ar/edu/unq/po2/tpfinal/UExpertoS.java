@@ -20,7 +20,7 @@ class UExpertoS {
 	@BeforeEach
 	void setUp(){
 		ap = new AplicacionWeb();
-		usr = new Usuario(null, experto);
+		usr = new Usuario(null, experto, ap);
 		muestra = new Muestra(usr, null, null, null);
 		Muestra muestra2 = new Muestra(usr, null, null, null);
 		Muestra muestra3 = new Muestra(usr, null, null, null);

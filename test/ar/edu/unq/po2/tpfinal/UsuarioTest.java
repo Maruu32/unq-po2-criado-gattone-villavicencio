@@ -28,8 +28,8 @@ class UsuarioTest {
 		ubicacion = mock(Ubicacion.class);
 		foto = mock(BufferedImage.class);
 		aplicacionWeb = new AplicacionWeb();
-		usuario = new Usuario("villa", experto);
-		usuario.nuevaMuestra(aplicacionWeb,EspecieVinchuca.VICHUCA_GUASAYANA, ubicacion, foto, opinion); 
+		usuario = new Usuario("villa", experto, aplicacionWeb);
+		usuario.nuevaMuestra(EspecieVinchuca.VICHUCA_GUASAYANA, ubicacion, foto, opinion); 
 		usuario.opinar(EspecieVinchuca.VICHUCA_GUASAYANA, muestra);
 		
 	

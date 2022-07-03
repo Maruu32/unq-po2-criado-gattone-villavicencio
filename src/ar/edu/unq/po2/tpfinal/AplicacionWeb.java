@@ -100,7 +100,7 @@ public class AplicacionWeb {
 
 	
 	public void registarUsuario(String _nombre,EstadoUsuario estado) {
-		addUsuario(new Usuario(_nombre, estado)); 
+		addUsuario(new Usuario(_nombre, estado, this)); 
 		
 	}
 	
