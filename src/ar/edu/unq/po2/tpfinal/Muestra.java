@@ -16,10 +16,9 @@ public class Muestra {
 	private LocalDate fechaCreacion = LocalDate.now();
 	private Opinion opinion;
 	
-	private List <Opinion> opinionesExp = new ArrayList <>();
-	private List <Opinion> opinionesBas = new ArrayList <>();
+	private List <Opinion> opiniones = new ArrayList <>();
 	
-	private MuestraState validacionMuestra = new ValidacionMuestraBasico();
+	private MuestraState validacionMuestra = new ValidacionMuestra();
 			
 	public Muestra(Usuario usuario, Ubicacion u, BufferedImage foto, Opinion aOpinion) {
 		this.setUbicacion(u); 
@@ -88,16 +87,7 @@ public class Muestra {
 	
 	private void setOpinion(Opinion op){ this.opinion = op; }
 	
-	public List<Opinion> getOpinionesBasicos(){ return this.opinionesBas; }
-	
-	public List<Opinion> getOpinionesExpertos(){ return this.opinionesExp; }
-	
-	public List<Opinion> getOpiniones() {
-		List<Opinion> reviews = new ArrayList<>();
-		reviews.addAll(this.getOpinionesBasicos());
-		reviews.addAll(this.getOpinionesExpertos());
-		return reviews;
-	}
+	public List<Opinion> getOpiniones(){ return this.opiniones; }
 	
 	//Ubicacion
 	private void setUbicacion(Ubicacion u) { this.ubicacion = u;}
