@@ -16,7 +16,7 @@ public class UExperto implements EstadoUsuario  {
 	public void opinar(ClasificacionMuestra clasificacion, Usuario _usuario, Muestra muestra) { 
 		//si puede opinar crea un opinion 
 	  if(!puedeOpinar(muestra)){
-		  _usuario.getAp().agregarOpinion(new Opinion(_usuario, muestra, clasificacion));
+		  muestra.agregarOpinion(new Opinion(_usuario, muestra, clasificacion));
 	  }  
 	}
 	@Override

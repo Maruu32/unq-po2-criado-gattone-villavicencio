@@ -20,7 +20,7 @@ class UExpertoTest {
 		void setUp(){
 			ap = new AplicacionWeb();
 			usr = new Usuario(null, experto);
-			Muestra muestra1 = new Muestra(usr, null, null, null);
+			muestra = new Muestra(usr, null, null, null);
 			Muestra muestra2 = new Muestra(usr, null, null, null);
 			Muestra muestra3 = new Muestra(usr, null, null, null);
 			Muestra muestra4 = new Muestra(usr, null, null, null);
