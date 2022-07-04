@@ -1,7 +1,7 @@
 package ar.edu.unq.po2.tpfinal.persona;
 
-import ar.edu.unq.po2.tpfinal.ClasificacionMuestra;
-import ar.edu.unq.po2.tpfinal.Muestra;
+import ar.edu.unq.po2.tpfinal.muestra.ClasificacionMuestra;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
 
 public interface EstadoUsuario {
 

@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.muestra;
 
 public enum NoEsVinchuca implements ClasificacionMuestra{
 	CHINCHE_FOLIADA,

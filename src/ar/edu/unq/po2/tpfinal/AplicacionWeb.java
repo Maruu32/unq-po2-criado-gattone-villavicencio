@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.unq.po2.tpfinal.buscador.Filtro;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
 import ar.edu.unq.po2.tpfinal.organizacion.Organizacion;
 import ar.edu.unq.po2.tpfinal.persona.EstadoUsuario;
 import ar.edu.unq.po2.tpfinal.persona.Usuario;

@@ -3,8 +3,8 @@ package ar.edu.unq.po2.tpfinal.buscador;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import ar.edu.unq.po2.tpfinal.Muestra;
-import ar.edu.unq.po2.tpfinal.NivelVerificacion;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
+import ar.edu.unq.po2.tpfinal.muestra.NivelVerificacion;
 
 public class FiltroNivelDeVerificacion implements Filtro {
 	

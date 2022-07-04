@@ -5,9 +5,9 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 import ar.edu.unq.po2.tpfinal.AplicacionWeb;
-import ar.edu.unq.po2.tpfinal.ClasificacionMuestra;
-import ar.edu.unq.po2.tpfinal.Muestra;
-import ar.edu.unq.po2.tpfinal.Opinion;
+import ar.edu.unq.po2.tpfinal.muestra.ClasificacionMuestra;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
+import ar.edu.unq.po2.tpfinal.muestra.Opinion;
 import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
 
 

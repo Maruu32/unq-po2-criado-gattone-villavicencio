@@ -3,8 +3,8 @@ package ar.edu.unq.po2.tpfinal.buscador;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import ar.edu.unq.po2.tpfinal.EspecieVinchuca;
-import ar.edu.unq.po2.tpfinal.Muestra;
+import ar.edu.unq.po2.tpfinal.muestra.EspecieVinchuca;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
 
 public class FiltroTipoDeInsecto implements Filtro {
 	

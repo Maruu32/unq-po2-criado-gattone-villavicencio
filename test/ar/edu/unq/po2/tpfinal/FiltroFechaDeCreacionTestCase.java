@@ -14,6 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import ar.edu.unq.po2.tpfinal.buscador.FiltroFechaDeCreacion;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
 import ar.edu.unq.po2.tpfinal.operadorrelacional.OperadorRelacionalFechas;
 
 class FiltroFechaDeCreacionTestCase {

@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.muestra;
 import java.awt.image.BufferedImage;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -80,7 +80,7 @@ public class Muestra {
 		return this.getValidacionMuestra().getUltimaOpinion(this);
 	}
 	
-	protected void setMuestraState(MuestraState aSampleState) {
+	public void setMuestraState(MuestraState aSampleState) {
 		this.validacionMuestra = aSampleState;
 	}
 	//Opiniones

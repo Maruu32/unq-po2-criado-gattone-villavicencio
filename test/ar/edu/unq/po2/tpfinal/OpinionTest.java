@@ -11,6 +11,8 @@ import java.util.Date;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import ar.edu.unq.po2.tpfinal.muestra.ClasificacionMuestra;
+import ar.edu.unq.po2.tpfinal.muestra.Opinion;
 import ar.edu.unq.po2.tpfinal.persona.Usuario;
 
 
@@ -42,22 +44,6 @@ class OpinionTest {
 		
 	}
 	
-	@Test
-	void testOpinion_set_creation_date() {
-		Usuario Usuario = Mockito.mock(Usuario.class);
-		ClasificacionMuestra aCase = Mockito.mock(ClasificacionMuestra.class);
-		
 
-		ArrayList beforeCreation = new ArrayList();
-		Opinion SUT = new Opinion(Usuario, null, aCase);
-		ArrayList afterCreation = new ArrayList();
-		LocalDate result = SUT.getFechaCreacion();
-		
-		assertFalse(beforeCreation.after(result));
-		assertFalse(afterCreation.before(result));
-
-		
-		
-	}
 
 }

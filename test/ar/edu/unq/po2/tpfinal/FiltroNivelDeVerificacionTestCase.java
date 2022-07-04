@@ -14,6 +14,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import ar.edu.unq.po2.tpfinal.buscador.FiltroNivelDeVerificacion;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
+import ar.edu.unq.po2.tpfinal.muestra.NivelVerificacion;
 
 class FiltroNivelDeVerificacionTestCase {
 	

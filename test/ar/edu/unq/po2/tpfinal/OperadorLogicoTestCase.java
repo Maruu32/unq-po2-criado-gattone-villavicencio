@@ -18,6 +18,7 @@ import ar.edu.unq.po2.tpfinal.buscador.And;
 import ar.edu.unq.po2.tpfinal.buscador.Filtro;
 import ar.edu.unq.po2.tpfinal.buscador.FiltroCombinado;
 import ar.edu.unq.po2.tpfinal.buscador.Or;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
 
 class OperadorLogicoTestCase {
 	

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
 import ar.edu.unq.po2.tpfinal.persona.UBasico;
 import ar.edu.unq.po2.tpfinal.persona.Usuario;
 import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;

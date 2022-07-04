@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import ar.edu.unq.po2.tpfinal.Muestra;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
 import ar.edu.unq.po2.tpfinal.operadorrelacional.OperadorRelacionalFechas;
 
 public class FiltroFechaDeCreacion extends FiltroFecha implements Filtro {

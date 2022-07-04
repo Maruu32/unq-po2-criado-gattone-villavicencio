@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tpfinal.organizacion;
 
-import ar.edu.unq.po2.tpfinal.Muestra;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
 import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
 import ar.edu.unq.po2.tpfinal.zonadecobertura.ObserverZona;
 import ar.edu.unq.po2.tpfinal.zonadecobertura.TipoAvisoZona;

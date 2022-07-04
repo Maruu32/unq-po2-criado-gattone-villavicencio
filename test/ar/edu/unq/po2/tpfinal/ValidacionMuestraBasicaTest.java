@@ -12,6 +12,10 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
+import ar.edu.unq.po2.tpfinal.muestra.Opinion;
+import ar.edu.unq.po2.tpfinal.muestra.ValidacionMuestraBasico;
+
 class ValidacionMuestraBasicaTest {
 
 	ValidacionMuestraBasico SUT = new ValidacionMuestraBasico(); 

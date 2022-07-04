@@ -10,6 +10,12 @@ import java.util.List;
 
 import org.mockito.Mockito;
 
+import ar.edu.unq.po2.tpfinal.muestra.ClasificacionMuestra;
+import ar.edu.unq.po2.tpfinal.muestra.EspecieNoDefinida;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
+import ar.edu.unq.po2.tpfinal.muestra.Opinion;
+import ar.edu.unq.po2.tpfinal.muestra.ValidacionMuestraExperto;
+
 
 class ValidacionMuestraExpertoTest {
 	ValidacionMuestraExperto SUT = new ValidacionMuestraExperto();

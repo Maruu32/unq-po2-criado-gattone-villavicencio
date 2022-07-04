@@ -13,6 +13,7 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
 import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
 import ar.edu.unq.po2.tpfinal.zonadecobertura.ObserverZona;
 import ar.edu.unq.po2.tpfinal.zonadecobertura.TipoAvisoZona;

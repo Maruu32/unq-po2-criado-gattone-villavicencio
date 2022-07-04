@@ -3,7 +3,7 @@ package ar.edu.unq.po2.tpfinal.buscador;
 import java.time.LocalDate;
 import java.util.List;
 
-import ar.edu.unq.po2.tpfinal.Muestra;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
 import ar.edu.unq.po2.tpfinal.operadorrelacional.OperadorRelacionalFechas;
 
 public abstract class  FiltroFecha {

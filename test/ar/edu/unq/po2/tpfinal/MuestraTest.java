@@ -15,6 +15,13 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import ar.edu.unq.po2.tpfinal.muestra.ClasificacionMuestra;
+import ar.edu.unq.po2.tpfinal.muestra.EspecieNoDefinida;
+import ar.edu.unq.po2.tpfinal.muestra.EspecieVinchuca;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
+import ar.edu.unq.po2.tpfinal.muestra.MuestraState;
+import ar.edu.unq.po2.tpfinal.muestra.NoEsVinchuca;
+import ar.edu.unq.po2.tpfinal.muestra.Opinion;
 import ar.edu.unq.po2.tpfinal.persona.Usuario;
 import ar.edu.unq.po2.tpfinal.ubicacion.Ubicacion;
 
@@ -33,7 +40,7 @@ class MuestraTest {
 			Muestra SUT = new Muestra(null, aUbicacion, aPhoto, aOpinion);
 			
 			assertEquals(aPhoto, SUT.getFoto());
-		}
+		} 
 		
 		@Test
 		void MuestraTest_set_initial_state_to_basic_valiLocalDate_Muestra() {

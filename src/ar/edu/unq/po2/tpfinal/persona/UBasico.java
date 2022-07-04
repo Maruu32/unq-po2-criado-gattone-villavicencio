@@ -6,9 +6,9 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-import ar.edu.unq.po2.tpfinal.ClasificacionMuestra;
-import ar.edu.unq.po2.tpfinal.Muestra;
-import ar.edu.unq.po2.tpfinal.Opinion;
+import ar.edu.unq.po2.tpfinal.muestra.ClasificacionMuestra;
+import ar.edu.unq.po2.tpfinal.muestra.Muestra;
+import ar.edu.unq.po2.tpfinal.muestra.Opinion;
 
 public class UBasico implements EstadoUsuario  { 
 
